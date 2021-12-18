@@ -25,10 +25,10 @@ router.get('/login', (req, res) => {
     })
 })
 
-router.get('/pica', (req, res) => {
-    res.render('pica', {
+router.get('/test', (req, res) => {
+    res.render('test', {
         title: 'Přihlášení',
-        style: 'pica.css'
+        style: 'test.css'
     })
 })
 

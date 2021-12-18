@@ -2,6 +2,7 @@ const db = require('../database')
 const bcrypt = require('bcrypt')
 
 
+
 exports.register = (req, res) => {
     const {jmeno, prijmeni, mobil, email, password} = req.body
     console.log(req.body)
@@ -17,3 +18,4 @@ exports.register = (req, res) => {
 }
         
     
+
