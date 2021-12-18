@@ -1,4 +1,5 @@
 const express = require('express');
+const hbs = require('hbs');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -6,12 +7,21 @@ const conn = require('./database')
 
 
 
+
+
 const app = express();
 
 
 //nastavení handlebars
-app.engine('hbs', require('exphbs'));
+app.engine('hbs', exphbs.engine({
+    layoutsDir: __dirname + '/views/layouts',
+    defaultLayout: 'main',
+    extname: '.hbs'
+}));
+
 app.set('view engine', 'hbs');
+app.set('views', './views')
+
 
 // Body Parser Middleware
 app.use(express.json());
