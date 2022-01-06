@@ -6,15 +6,19 @@ const bcrypt = require('bcrypt');
 
 exports.login = (req, res) => {
 	const {email, password} = req.body;
-	console.log(req.body);
-
-	db.query(`SELECT * FROM zakaznici WHERE email = '${email}'`),
-	(err, email, password, result) => {
+	//console.log(email, password);
+	let sql = `SELECT * FROM zakaznici WHERE email = '${email}'`
+	db.query(sql,(err, result) => {
 		if(err) {
 			console.log(err);
-		}else if(email == result[i].email && bcrypt.verify(password, result[i].heslo)){
-			console.log(password);
-			return res.redirect('/');
 		}
-	}
+		console.log(result)
+		for (let i = 0; i < result.length; i++) {
+			if(email == result[i].email && bcrypt.compareSync(password, result[i].heslo)) {
+				console.log(password);
+				return res.redirect('/');
+			}
+			
+		}
+	})
 }
