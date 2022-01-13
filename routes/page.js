@@ -3,9 +3,9 @@ const router = express.Router();
 
 //routa na hlavní stránku
 router.get('/', (req, res) => {
-    res.render('server',{
+    res.render('home',{
         title: 'Hlavní stránka',
-        style: 'server.css'
+        style: 'home.css'
     })
 })
 

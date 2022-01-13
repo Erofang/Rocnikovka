@@ -1,10 +1,16 @@
-
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">U Pepegy</a>
+    </div>
+  </div>
+</nav>
     <div class="container">
   <div class="row centered-form">
     <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Zaregistrovat se</h3>
+          <h3 class="panel-title">Registrace</h3>
         </div>
         <div class="panel-body">
           <!-- Začátek formu -->
@@ -14,46 +20,39 @@
                 <div class="form-group">
                   <!-- Input pro jméno -->
                   <input type="text" name="jmeno" id="jmeno" class="form-control input-sm"
-                    placeholder="First Name" required>
+                    placeholder="Jméno" required>
                 </div>
               </div>
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                   <!-- Input pro příjmení-->
-                  <input type="text" name="prijmeni" id="prijmeni" class="form-control input-sm" placeholder="Last Name" required>
-                </div>
-              </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                 <div class="form-group">
-                  <!-- Input pro příjmení-->
-                  <input type="tel" name="mobil" id="mobil" class="form-control input-sm" placeholder="tel_cislo" required>
+                  <input type="text" name="prijmeni" id="prijmeni" class="form-control input-sm" placeholder="Příjmení" required>
                 </div>
               </div>
             </div>
+             <div class="form-group">
+                  <!-- Input pro tel_číslo-->
+                  <input type="tel" name="mobil" id="mobil" class="form-control input-sm" placeholder="tel_číslo" required>
+                </div>
             <div class="form-group">
               <!-- Input pro email-->
-              <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" required>              
+              <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email" required>              
 
             </div>
             <div class="form-group">
               <!-- Input pro heslo-->
-              <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" required>
+              <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Heslo" required>
             </div>
 
             <div class="form-group">
               <!-- Button na odeslání formu-->
-              <input type="submit" value="Register" class="btn btn-info btn-block">
+              <input type="submit" value="Registrovat" class="btn btn-info btn-block">
 
             </div>
             <!-- Link na registraci-->
-            <a href="login" class="">Already have an account?</a>
-            {{#if message}}
-              <h4 class="alert alert-danger mt-4">{{message}}</h4>
-            {{/if}}
-        </div>
-        <!-- Konec formu-->
+            <a href="login" class="">Už máte účet?</a> 
+         </div>
         </form>
-
       </div>
     </div>
   </div>
