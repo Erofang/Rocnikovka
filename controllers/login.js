@@ -13,12 +13,12 @@ exports.login = (req, res) => {
 			console.log(err);
 		}
 		console.log(result)
-		for (let i = 0; i < result.length; i++) {
+		//for (let i = 0; i < result.length; i++) {
 			if(email == result[i].email && bcrypt.compareSync(password, result[i].heslo)) {
 				console.log(password);
 				return res.redirect('/');
 			}
 			
-		}
+		//}
 	})
 }

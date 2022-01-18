@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const product = require('../models/products')
 
 //routa na hlavní stránku
-router.get('/', (req, res) => {
+router.get('/', (req, res, ) => {
+    const data = products.showProduct();
     res.render('home',{
         title: 'Hlavní stránka',
-        style: 'home.css'
+        style: 'home.css',
+        table: data
     })
 })
 
