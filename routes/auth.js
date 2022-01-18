@@ -6,6 +6,8 @@ const router = express.Router()
 
 //routa na register
 router.post('/register', registo.register)
+
+//routa na login
 router.post('/login', loginos.login)
 
 

@@ -1,14 +1,15 @@
 const express = require('express');
+const async = require('hbs/lib/async');
 const router = express.Router();
 const product = require('../models/products')
 
 //routa na hlavní stránku
-router.get('/', (req, res, ) => {
-    const data = products.showProduct();
+router.get('/', async (req, res, ) => {
+    const data =  await product.showProduct();
     res.render('home',{
         title: 'Hlavní stránka',
         style: 'home.css',
-        table: data
+        product: data
     })
 })
 
