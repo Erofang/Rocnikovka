@@ -14,27 +14,28 @@
 </nav>
 
 <div class="d-flex justify-content-center" id="vyrobky">
-<div class="col-md-5">
-<div class="table-wrap">
-<table class="table table-striped table-dark ">
-  <tbody>
+ <div class="col-md-5">
+  <div class="table-wrap">
+   <table class="table table-striped table-dark ">
+    <tbody>
      <tr>
       <th scope="col">Druh</th>
       <th scope="col">Cena</th>
       <th scope="col">Složení</th>
-    </tr>
+     </tr>
     {{#each product}}
-    <tr>
+     <tr>
       <td>{{this.nazev}}</td>
       <td>{{this.cena}}0</td>
       <td>{{this.popis}}</td>
-    </tr>
+     </tr>
     {{/each}}
-  </tbody>
-</table>
+    </tbody>
+   </table>
+  </div>
+ </div>
 </div>
-</div>
-</div>
+
 
   
 

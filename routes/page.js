@@ -29,10 +29,10 @@ router.get('/login', (req, res) => {
     })
 })
 
-router.get('/test', (req, res) => {
-    res.render('test', {
-        title: 'Přihlášení',
-        style: 'test.css'
+router.get('/profile', (req, res) => {
+    res.render('profile', {
+        title: 'Profil',
+        style: 'profile.css'
     })
 })
 
