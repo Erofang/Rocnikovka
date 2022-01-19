@@ -1,11 +1,22 @@
 body {
-	background-color: #fbfbfb;
+	background-color: rgb(170, 32, 32);
 }
 .centered-form {
 	margin-top: 200px;
 }
+.centered-form .panel-heading{
+	color: white;
+	background: #333333;
 
+}
 .centered-form .panel {
-	background: #eee8e8;
-
+	background-color: #333333;
+}
+.footer {
+    position: fixed;
+    width:100%;
+    bottom: 0;
+}
+#footer {
+	background-color: #333333;
 }

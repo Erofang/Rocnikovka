@@ -4,8 +4,8 @@ const router = express.Router();
 const product = require('../models/products')
 
 //routa na hlavní stránku
-router.get('/', async (req, res, ) => {
-    const data =  await product.showProduct();
+router.get('/',  async (req, res, ) => {
+    const data =   await product.showProduct();
     res.render('home',{
         title: 'Hlavní stránka',
         style: 'home.css',
