@@ -32,7 +32,7 @@ const styly = path.join(__dirname, 'styly');
 app.use(express.static('./styly'));
 
 //základní routa
-app.use('/', require('./routes/page'))
+app.use('/', require('./controllers/product.js'));
 app.use('/auth', require('./routes/auth'));
 
 
