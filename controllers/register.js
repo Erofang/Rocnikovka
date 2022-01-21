@@ -1,30 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const Register = require('../models/Register');
+/* const Register = require('../models/Register'); */
+const db = require('../database')
 
 
 
-router.post('/register', async(req, res) => {
-    const {jmeno, prijmeni, mobil, email, password} = req.body
-    console.log(req.body)
 
-    //zašifrování hesla
-    const hashedPassword =  bcrypt.hashSync(password, 10);
-    console.log(hashedPassword); 
-    const data = await Register.register();       
 
-    res.redirect('register', {
+
+router.get('/', (req, res) => {
+    res.render('register', {
         title: 'Registrace',
-        style: 'register.css',
-        register: data
+        style: 'register.css'
     })
 })
-
-
-module.exports = router;
-
-
 
 /* exports.register = (req, res) => {
     const {jmeno, prijmeni, mobil, email, password} = req.body
@@ -32,8 +22,22 @@ module.exports = router;
 
     //zašifrování hesla
     const hashedPassword =  bcrypt.hashSync(password, 10);
-    console.log(hashedPassword);         
-} */
-        
+    console.log(hashedPassword);
+        //vložíme hodnoty z formuláře do databaze
+        let sql = `INSERT INTO zakaznici(jmeno, prijmeni, mobil, email, heslo) VALUES ('${jmeno}','${prijmeni}', '${mobil}','${email}','${hashedPassword}')`;
+        db.query(sql, (err, result) => {
+            if(err) {
+                console.log(err);
+            }else {
+                return res.redirect('/');
+         }
+    })  
+}
+ */
+module.exports = router;
+
+
+
+ 
     
 

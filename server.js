@@ -11,6 +11,10 @@ const conn = require('./database')
 
 const app = express();
 
+const productRouter = require('./controllers/product')
+const registerRouter = require('./controllers/register');
+const loginRouter = require('./controllers/login');
+
 
 //nastavení handlebars
 app.engine('hbs', exphbs.engine({
@@ -32,11 +36,9 @@ const styly = path.join(__dirname, 'styly');
 app.use(express.static('./styly'));
 
 //základní routa
-app.use('/', require('./controllers/product.js'));
-app.use('/auth', require('./routes/auth'));
-
-
-
+app.use('/', productRouter);
+app.use('/register', registerRouter);
+app.use('/login', loginRouter);
 
 
 
