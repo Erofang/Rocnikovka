@@ -3,9 +3,10 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
 
+
 function initialize(passport, getUserByEmail, getUserById) {
     const authenticateUser = async (email, password, done) => {
-        const user = getUserByEmail(email)
+       const user = require('./models/Login');
         if (user == null) {
             return done(null, false, {message: 'Uživatel s tímto emailem neexistuje'})
         }

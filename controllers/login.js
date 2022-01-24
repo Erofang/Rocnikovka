@@ -10,10 +10,7 @@ const app = express();
 const Login = require('../models/Login');
 const db = require('../database');
 const initializePassport = require('../passport-config');
-/* initializePassport(passport, 
-	email => users.find(user => user.email === email),
-	id => users.find(user => user.id === id)
-) */
+
 
 app.use(flash());
 app.use(session({
