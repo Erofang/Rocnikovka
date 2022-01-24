@@ -3,14 +3,6 @@ body {
     background-color: rgb(170, 32, 32);
 }
 
-#vyrobky {
-    margin-top: 27 px;
-}
-.footer {
-    position: fixed;
-    width:100%;
-    bottom: 0;
-}
-#footer {
-	background-color: #333333;
+.navbar-menu {
+    display: flex; justify-content:center
 }

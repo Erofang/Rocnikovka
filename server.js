@@ -10,10 +10,12 @@ const conn = require('./database')
 
 
 const app = express();
-
+//lifehack xd xd
+const homeRouter = require('./controllers/home');
 const productRouter = require('./controllers/product')
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
+const profileRouter = require('./controllers/profile');
 
 
 //nastavení handlebars
@@ -36,9 +38,11 @@ const styly = path.join(__dirname, 'styly');
 app.use(express.static('./styly'));
 
 //základní routa
-app.use('/', productRouter);
+app.use('/', homeRouter);
+app.use('/product', productRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/profile', profileRouter);
 
 
 

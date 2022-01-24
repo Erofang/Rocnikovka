@@ -1,37 +1,43 @@
 const express = require('express');
 const router = express.Router();
-/* const Login = require('../models/Login.js'); */
-const db = require('../database')
+const bcrypt = require('bcrypt');
+const passport = require('passport');
+const flash = require('express-flash');
+const session = require('express-session');
 
 
+const app = express();
+const Login = require('../models/Login');
+const db = require('../database');
+const initializePassport = require('../passport-config');
+/* initializePassport(passport, 
+	email => users.find(user => user.email === email),
+	id => users.find(user => user.id === id)
+) */
 
+app.use(flash());
+app.use(session({
+	secret: 'secret',
+	resave: false,
+	saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
+//login page
 router.get('/', (req, res) => {
-    res.render('login', {
+    res.render('login/index', {
         title: 'Přihlášení',
         style: 'login.css'
     })
 })
+//poslaní formu na login page
+router.post('/', passport.authenticate('local', {
+	successRedirect: 'index',
+	failureRedirect: 'login',
+	failureFlash: true
+}))
+
 
 
 module.exports = router;
-
-
-/* exports.login = (req, res) => {
-	const {email, password} = req.body;
-	//console.log(email, password);
-	let sql = `SELECT * FROM zakaznici WHERE email = '${email}'`
-	db.query(sql,(err, result) => {
-		if(err) {
-			console.log(err);
-		}
-		console.log(result)
-		for (let i = 0; i < result.length; i++) {
-			if(email == result[i].email && bcrypt.compareSync(password, result[i].heslo)) {
-				console.log(password);
-				return res.redirect('/');
-			}
-			
-		}
-	})
-} */

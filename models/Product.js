@@ -1,7 +1,7 @@
 
 const db = require('../database')
 
-
+//sql na zobrazení tabulky produktů na mani page
 exports.showProduct =  () => {
     return new Promise((resolve, reject) => {
         try {
