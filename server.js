@@ -1,7 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
 const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser');
 const path = require('path');
 const conn = require('./database')
 
@@ -10,12 +9,12 @@ const conn = require('./database')
 
 
 const app = express();
-//lifehack xd xd
+//nastavení cest
 const homeRouter = require('./controllers/home');
-const productRouter = require('./controllers/product')
+const profileRouter = require('./controllers/profile');
+const productRouter = require('./controllers/product');
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
-const profileRouter = require('./controllers/profile');
 
 
 //nastavení handlebars
@@ -39,10 +38,10 @@ app.use(express.static('./styly'));
 
 //základní routa
 app.use('/', homeRouter);
+app.use('/profile', profileRouter);
 app.use('/product', productRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-app.use('/profile', profileRouter);
 
 
 
