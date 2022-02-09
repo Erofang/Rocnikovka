@@ -9,7 +9,7 @@ const session = require('express-session');
 const app = express();
 const Login = require('../models/Login');
 const db = require('../database');
-const initializePassport = require('../passport-config');
+/* const initializePassport = require('../passport-config');
 
 
 app.use(flash());
@@ -19,7 +19,7 @@ app.use(session({
 	saveUninitialized: false
 }));
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session()); */
 
 //login page
 router.get('/', (req, res) => {
@@ -29,11 +29,11 @@ router.get('/', (req, res) => {
     })
 })
 //poslaní formu na login page
-router.post('/', passport.authenticate('local', {
+/* router.post('/', passport.authenticate('local', {
 	successRedirect: 'index',
 	failureRedirect: 'login',
 	failureFlash: true
-}))
+})) */
 
 
 
