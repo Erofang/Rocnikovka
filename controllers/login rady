@@ -1,0 +1,4 @@
+passport-dokumentace
+express-session ---npm
+databaze dve funkce check username a password bcrypt compare 
+na kazdou routu dat chcekced login express-session
