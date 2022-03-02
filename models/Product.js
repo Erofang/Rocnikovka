@@ -4,7 +4,7 @@ const db = require('../database')
 exports.showProduct =  () => {
     return new Promise((resolve, reject) => {
         try {
-            let sql = 'SELECT nazev, cena, popis FROM vyrobky'
+            let sql = 'SELECT nazev, cena, popis FROM vyrobky where id_dru = 1'
             db.query(sql, (error, results) => {
                 if (error) throw error;
                 resolve(results);
