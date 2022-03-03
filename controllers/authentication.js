@@ -17,6 +17,8 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (user, done) {
 	done(null, user);
 });
+
+
 // Local strategie přihlašování, která se vkládá do route loginu (passport.authenticate)
 passport.use(
 	'local',
@@ -52,3 +54,4 @@ passport.use(
 );
 
 module.exports = passport;
+

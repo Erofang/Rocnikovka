@@ -61,13 +61,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-//je user prihlasen?
-function isLoggedIn (req, res, next) {
-	if (req.isAuthenticated()) return next();
-	res.redirect('/login');
-}
-
-
 
 
 
