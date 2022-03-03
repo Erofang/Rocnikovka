@@ -2,38 +2,28 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const flash = require('express-flash');
 const session = require('express-session');
-
-
-const app = express();
-const Login = require('../models/Login');
-const db = require('../database');
-/* const initializePassport = require('../passport-config');
-
-
-app.use(flash());
-app.use(session({
-	secret: 'secret',
-	resave: false,
-	saveUninitialized: false
-}));
-app.use(passport.initialize());
-app.use(passport.session()); */
+const conn = require('../database');
+const LocalStrategy = require('passport-local').Strategy;
+const mysql = require('mysql');
+const auth = require('./authentication');
 
 //login page
 router.get('/', (req, res) => {
     res.render('login/index', {
         title: 'Přihlášení',
-        style: 'login.css'
+        style: 'login.css',
+		message: req.flash('error')
     })
 })
+
+
 //poslaní formu na login page
-/* router.post('/', passport.authenticate('local', {
-	successRedirect: 'index',
+router.post('/', passport.authenticate('local', {
+	successRedirect: '/',
 	failureRedirect: 'login',
 	failureFlash: true
-})) */
+}))
 
 
 

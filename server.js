@@ -2,7 +2,12 @@ const express = require('express');
 const hbs = require('hbs');
 const exphbs = require('express-handlebars');
 const path = require('path');
-const conn = require('./database')
+const session = require('express-session');
+const passport = require('passport');
+const dotenv = require('dotenv').config({path:'./.env'});
+const flash = require('connect-flash');
+const cookieParser = require('cookie-parser')
+const db = require('./database')
 
 
 
@@ -35,6 +40,36 @@ app.use(express.urlencoded({ extended: false }));
 //static routa na css
 const styly = path.join(__dirname, 'styly');
 app.use(express.static('./styly'));
+
+
+
+
+//session
+app.use(
+	session({
+		secret: process.env.SESSION_SECRET,
+		resave: true,
+		saveUninitialized: true,
+	})
+);
+
+// Flash 
+app.use(flash());
+
+// Passport 
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+//je user prihlasen?
+function isLoggedIn (req, res, next) {
+	if (req.isAuthenticated()) return next();
+	res.redirect('/login');
+}
+
+
+
+
 
 //základní routa
 app.use('/', homeRouter);
