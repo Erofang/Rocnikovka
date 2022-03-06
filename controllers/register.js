@@ -5,15 +5,25 @@ const Register = require('../models/Register');
 
 
 
+
+
+function chceckNotAuthenticated(req, res, next) {
+	if (req.isAuthenticated()) {  
+	 return res.redirect('/');
+    }
+    next();
+}
+
+
 //register page
-router.get('/', (req, res) => {
+router.get('/', chceckNotAuthenticated, (req, res) => {
     res.render('register/index', {
         title: 'Registrace',
         style: 'register.css'
     })
 })
 //poslaní formu na register page
-router.post('/', async (req, res) =>{
+router.post('/', chceckNotAuthenticated, async (req, res) =>{
     try {
         const {jmeno,prijmeni, mobil, email, password} = req.body;
         console.log(req.body);

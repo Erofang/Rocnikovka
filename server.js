@@ -7,6 +7,7 @@ const passport = require('passport');
 const dotenv = require('dotenv').config({path:'./.env'});
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser')
+const methoOverride = require('method-override')
 const db = require('./database')
 
 
@@ -59,6 +60,7 @@ app.use(flash());
 // Passport 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(methoOverride('_method'))
 
 
 

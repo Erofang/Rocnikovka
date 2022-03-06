@@ -8,8 +8,19 @@ const LocalStrategy = require('passport-local').Strategy;
 const mysql = require('mysql');
 const auth = require('./authentication');
 
+
+
+
+function chceckNotAuthenticated(req, res, next) {
+	if (req.isAuthenticated()) {  
+	 return res.redirect('/');
+    }
+    next();
+}
+
+
 //login page
-router.get('/', (req, res) => {
+router.get('/', chceckNotAuthenticated, (req, res) => {
     res.render('login/index', {
         title: 'Přihlášení',
         style: 'login.css',
@@ -19,7 +30,7 @@ router.get('/', (req, res) => {
 
 
 //poslaní formu na login page
-router.post('/', passport.authenticate('local', {
+router.post('/', chceckNotAuthenticated, passport.authenticate('local', {
 	successRedirect: '/',
 	failureRedirect: 'login',
 	failureFlash: true
