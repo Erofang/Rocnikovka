@@ -8,6 +8,7 @@ const dotenv = require('dotenv').config({path:'./.env'});
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser')
 const methoOverride = require('method-override')
+const nodemailer = require('nodemailer')
 const db = require('./database')
 
 
