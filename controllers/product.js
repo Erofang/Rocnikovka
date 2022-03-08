@@ -7,11 +7,13 @@ const Product = require('../models/Product');
 
 //routa na hlavní stránku
 router.get('/',  async (req, res, ) => {
-    const data =   await Product.showProduct();
+    const dataFood =   await Product.showProductFood();
+    const dataDrink = await Product.showProductDrink();
     res.render('product/index',{
         title: 'Hlavní stránka',
         style: 'home.css',
-        product: data
+        Food: dataFood,
+        Drink: dataDrink
     })
 })
 
