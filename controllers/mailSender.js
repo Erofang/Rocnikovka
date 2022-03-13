@@ -1,24 +1,39 @@
-/* nodemailer = require('nodemailer');
-const dotenv = require('dotenv').config();
+const nodemailer = require('nodemailer')
+require('dotenv').config()
 
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
+const transporter = nodemailer.createTransport({
+  host: 'smtp.ethereal.email',
+  port: 587,
   auth: {
-    user: process.env.email,
-    pass: process.env.email_pass
+      user: 'alisha.weissnat52@ethereal.email',
+      pass: '5hZ4YaBM4Mz12897cZ'
   }
 });
 
-var mailOptions = {
-  from: 'Upepegy',
-  to: 'matous.kader@seznam.cz',
-  subject: 'Funguje to?',
-  text: 'Tvoje mama'
-};
+const mailSender = async () => {
+    
+    
+    const mailOptions = {
+        from: 'Upepegy@seznam.cz',
+        to: 'Tvoje@mama.cz',
+        subject: 'Registrace',
+        text: `Tvoje Máma`
+    }
 
-transporter.sendMail(mailOptions, (error, info) => {
-  if (error) {
-    console.log(error);
-  }
-}); */
+    transporter.sendMail(mailOptions, (err, info) => {
+        if(err) throw err
+    })
+
+}
+
+
+module.exports = {
+    mailSender
+}
+
+
+
+
+
+
