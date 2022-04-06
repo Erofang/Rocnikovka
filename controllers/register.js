@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 nodemailer = require('nodemailer');
 const dotenv = require('dotenv').config();
 const Register = require('../models/Register');
-const sendMail = require('./mailSender')
+
 
 
 
