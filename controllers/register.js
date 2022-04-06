@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 nodemailer = require('nodemailer');
 const dotenv = require('dotenv').config();
 const Register = require('../models/Register');
-
+const sendMail = require('./mailSender')
 
 
 
@@ -31,7 +31,6 @@ router.post('/', chceckNotAuthenticated, async (req, res) =>{
     <p>Ověření registrace</p>
     <h3>Registrace</h3>
       <p>Byl jste zaregistrovan na strance restaurace U Pepegy</p>
-      <a href="localhost:5005/login"></a>
   `;
 
   let transporter = nodemailer.createTransport({

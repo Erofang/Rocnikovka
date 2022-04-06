@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 router.delete('/logout', (req, res) => {
     req.logout()
     res.redirect('/login')
-})
+}) 
 
 
 
