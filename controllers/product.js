@@ -11,7 +11,7 @@ router.get('/',  async (req, res, ) => {
     const dataDrink = await Product.showProductDrink();
     res.render('product/index',{
         title: 'Hlavní stránka',
-        style: 'home.css',
+        style: 'product.css',
         Food: dataFood,
         Drink: dataDrink
     })

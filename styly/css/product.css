@@ -1,0 +1,17 @@
+body {
+	background-color: rgb(170, 32, 32);
+}
+
+.thumbnail {
+    width: 300px;
+    background-color: green;
+}
+
+.thumbnail img {
+    max-height: 150px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
