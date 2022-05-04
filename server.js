@@ -18,6 +18,7 @@ const app = express();
 //nastavení cest
 const homeRouter = require('./controllers/home');
 const profileRouter = require('./controllers/profile');
+const orderRouter = require('./controllers/order');
 const productRouter = require('./controllers/product');
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
@@ -70,6 +71,7 @@ app.use(methoOverride('_method'))
 app.use('/', homeRouter);
 app.use('/profile', profileRouter);
 app.use('/product', productRouter);
+app.use('/order', orderRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 

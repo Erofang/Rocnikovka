@@ -3,8 +3,9 @@ body {
 }
 
 .thumbnail {
-    width: 300px;
+    width: 400px;
     background-color: green;
+    border-color: #333333;
 }
 
 .thumbnail img {
@@ -15,3 +16,14 @@ body {
     font-weight: bold;
     font-size: 16px;
 }
+
+.btn {
+    border-color: #333333;
+    background-color:rgb(170, 32, 32);
+    width: 50px;
+}
+.btn:hover {
+    background-color: #d65959;
+    border-color: #d65959;
+}
+
