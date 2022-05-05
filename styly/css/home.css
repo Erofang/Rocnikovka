@@ -3,18 +3,98 @@ body {
     background-color: rgb(170, 32, 32);
 }
 .navbar-inverse {
-    background-color:#0f1011
+    background-color:#0f1011;
 }
 .navbar-menu {
     display: flex; justify-content:center
 }
-.container {
-    width: 50%;
-    margin:  auto;
-    border: 3px solid black;
-    background-color:white;
+.about {
+    border-style: solid;
+    margin-left: 150px;
+    margin-right: 150px;
+    background-color:grey
 }
 
+.kontakty {
+    border-style: solid;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+    background-color:grey
+}
+
+.udaje {
+    border-style: solid;
+}
+
+.container  {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 600px;
+    background: #f2f2f2;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 20px 8px #d0d0d0;
+  }
+  
+  .content {
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    text-align: justify;
+    color: black;
+    padding: 40px;
+    font-family: 'Merriweather', serif;
+  }
+  
+  h1 {
+    font-weight: 900;
+    text-align: center;
+  }
+  
+  h3 {
+    font-weight: 300;
+  }
+  
+  .flap {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .flap::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 50%;
+    background: url("https://pbs.twimg.com/profile_images/1347260174176710658/2GfSZ1i__400x400.jpg") white;
+    background-position: 100px;
+    background-repeat: no-repeat;
+    transition: 1s;
+  }
+  
+  .flap::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 50%;
+    right: 0;
+    background: url("https://pbs.twimg.com/profile_images/1347260174176710658/2GfSZ1i__400x400.jpg") white;
+    background-position: -200px;
+    background-repeat: no-repeat;
+    transition: 1s;
+  }
+  
+  .container:hover .flap::after {
+    transform: translatex(300px);
+  }
+  
+  .container:hover .flap::before{
+    transform: translatex(-300px);
+  }
 
 
 
