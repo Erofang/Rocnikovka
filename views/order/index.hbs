@@ -28,7 +28,7 @@
   </div>
 </div>
 {{/each}}
-<section class="container content-section">
+{{!-- <section class="container content-section">
             <h2 class="section-header">CART</h2>
             <div class="cart-row">
                 <span class="cart-item cart-header cart-column">ITEM</span>
@@ -64,8 +64,48 @@
                 <span class="cart-total-price">$39.97</span>
             </div>
             <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-        </section>
+        </section> --}}
+         Products: 
+        <button onclick="showProducts()">Show all</button> 
+        <button onclick="showFoods()">Show foods</button> 
+        <button onclick="showDrinks()">Show drinks</button>
+
+        <div id="products"></div>
 
         <script>
-          console.log("hello world");
+           const foods = ["Svíčková", "Řízek", "Krtkův dort"];
+            const drinks = ["Cola", "Kofola", "Voda"];
+
+            const products = foods.concat(drinks); 
+
+            function showProducts(){
+                const prodDiv = document.getElementById("products");
+                prodDiv.innerHTML = "";
+
+                products.forEach(product => {
+                    prodDiv.innerHTML += product + "<button>+</button><br>";
+                });
+            }
+
+            function showFoods(){
+                const prodDiv = document.getElementById("products");
+                prodDiv.innerHTML = "";
+
+                foods.forEach(food => {
+                    prodDiv.innerHTML += food + "<br>";
+                });
+            }
+
+            function showDrinks(){
+                const prodDiv = document.getElementById("products");
+                prodDiv.innerHTML = "";
+
+                drinks.forEach(drink => {
+                    prodDiv.innerHTML += drink + "<br>";
+                });
+            }
+
+
+
+        </script>
         </script>
