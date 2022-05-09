@@ -13,7 +13,6 @@ router.get('/', async (req, res) => {
     res.render('order/index', {
         title: 'Order',
         style: 'order.css',
-        script: 'store.js',
         Food: dataFood,
         Drink: dataDrink
     })
