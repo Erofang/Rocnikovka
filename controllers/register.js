@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 const dotenv = require('dotenv').config();
 const Register = require('../models/Register');
-const sendMail = require('./mailSender')
+
 
 
 
