@@ -1,0 +1,121 @@
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">U Pepegy</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Registrace</a></li>
+      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Přihlášení</a></li>
+    </ul>
+  </div>
+</nav>
+
+<a href="order/1">Food</a>
+<a href="order/2">Drink</a>
+{{#if Produkty == null }}
+    <h1>Vyber si z nabídky</h1>
+{{/if}}
+{{#else}}
+
+{{#each Produkty}}
+<div class="column">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/ras/Assets/5802fab5-fdce-468a-a830-43e8001f5a72/Derivates/c00dc34a-e73d-42f0-a86e-e2fd967d33fe.jpg" alt="...">
+      <div class="caption">
+        <h3>{{this.nazev}}</h3>
+        <p>{{this.popis}}</p>
+        <div class="clearfix">
+          <div class="price">{{this.cena}}0Kč</div>
+          <a href="#" class="btn btn-default pull-right" role="button">+</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}
+
+{{/else}}
+{{!-- <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+                <div class="cart-row">
+                    <div class="cart-item cart-column">
+                        <img class="cart-item-image" src="Images/Shirt.png" width="100" height="100">
+                        <span class="cart-item-title">T-Shirt</span>
+                    </div>
+                    <span class="cart-price cart-column">$19.99</span>
+                    <div class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" value="1">
+                        <button class="btn btn-danger" type="button">REMOVE</button>
+                    </div>
+                </div>
+                <div class="cart-row">
+                    <div class="cart-item cart-column">
+                        <img class="cart-item-image" src="Images/Album 3.png" width="100" height="100">
+                        <span class="cart-item-title">Album 3</span>
+                    </div>
+                    <span class="cart-price cart-column">$9.99</span>
+                    <div class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" value="2">
+                        <button class="btn btn-danger" type="button">REMOVE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$39.97</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section> --}}
+        
+ <!--       
+        <button onclick="showProducts()">Show all</button> 
+        <button onclick="showFoods()">Show foods</button> 
+        <button onclick="showDrinks()">Show drinks</button>
+        
+        
+        <div id="products"></div>
+        -->
+<!--
+        <script async>
+           const foods = document.getElementById("food").value;
+            const drinks = document.getElementById("drink").value;
+
+            const products = foods.concat(drinks); 
+
+            function showProducts(){
+                const prodDiv = document.getElementById("products");
+                prodDiv.innerHTML = "";
+
+                products.forEach(product => {
+                    prodDiv.innerHTML += product + "<button>+</button><br>";
+                });
+            }
+
+            function showFoods(){
+                const prodDiv = document.getElementById("products");
+                prodDiv.innerHTML = "";
+
+                foods.forEach(food => {
+                    prodDiv.innerHTML += food + "<br>";
+                });
+            }
+
+            function showDrinks(){
+                const prodDiv = document.getElementById("products");
+                prodDiv.innerHTML = "";
+
+                drinks.forEach(drink => {
+                    prodDiv.innerHTML += drink + "<br>";
+                });
+            }
+        </script>-->
+        
