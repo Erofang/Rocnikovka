@@ -31,10 +31,12 @@ router.get('/', chceckNotAuthenticated, (req, res) => {
 
 //poslaní formu na login page
 router.post('/', chceckNotAuthenticated, passport.authenticate('local', {
+    
 	successRedirect: '/',
 	failureRedirect: 'login',
 	failureFlash: true
-}))
+    }
+))
 
 
 
