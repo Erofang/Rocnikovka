@@ -31,10 +31,19 @@ router.get('/', chceckNotAuthenticated, (req, res) => {
 
 //poslaní formu na login page
 router.post('/', chceckNotAuthenticated, passport.authenticate('local', {
-	successRedirect: '/',
 	failureRedirect: 'login',
 	failureFlash: true
-}))
+}),
+    (req, res) => {
+        if (req.user.isAdmin === 1) {
+            res.redirect('/admin');
+        } else {
+            res.redirect('/')
+        }
+    }
+
+
+);
 
 
 

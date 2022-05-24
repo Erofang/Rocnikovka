@@ -22,6 +22,7 @@ const orderRouter = require('./controllers/order');
 const productRouter = require('./controllers/product');
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
+const adminRouter = require('./controllers/admin');
 
 
 //nastavení handlebars
@@ -74,6 +75,7 @@ app.use('/product', productRouter);
 app.use('/order', orderRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/admin', adminRouter);
 
 
 
