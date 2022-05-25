@@ -1,15 +1,21 @@
 const express = require('express');
 const router = express.Router();
+const Product = require('../models/Admin');
 
 
 
 
-router.get('/', (req, res)=>{
+router.get('/',async (req, res)=>{
+    const dataFood =   await Product.showProductFood();
+    const dataDrink = await Product.showProductDrink();
     res.render('admin/index', {
         title: 'Admin',
-        style: 'admin.css'
+        style: 'admin.css',
+        Food: dataFood,
+        Drink: dataDrink
     })
 })
+
 
 
 
