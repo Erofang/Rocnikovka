@@ -3,10 +3,10 @@ const router = express.Router();
 const methoOverride = require('method-override');
 
 
-/* function isLoggedIn(req, res, next) {
+function isLoggedIn(req, res, next) {
 	if (req.isAuthenticated()) return next();
 	res.redirect('/login');
-} */
+}
 
 
 function chceckNotAuthenticated(req, res, next) {

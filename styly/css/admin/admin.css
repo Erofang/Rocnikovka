@@ -1,0 +1,20 @@
+
+
+
+.container {
+    padding: 2rem 0rem;
+  }
+  
+  h4 {
+    margin: 2rem 0rem 1rem;
+  }
+  
+  header {
+    display: flex;
+    flex-basis: 100%;
+    grid-area: header;
+    height: 70px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    position: relative;
+  }

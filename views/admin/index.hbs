@@ -1,4 +1,14 @@
-<h1>ADMIN</h1>
+<div class="admin">
+  <header class="admin__header">
+    <a href="#" class="logo">
+      <h1>GridAdmin</h1>
+    </a>
+    <div class="toolbar">
+      <button class="btn btn--primary">Přidat produkt</button>
+      <form action="/logout?_method=DELETE" method="POST"><button type="submit">Odhlásit se</button></form>
+      
+    </div>
+  </header>
 
 <!--tabulka pro upravu jidla-->
    <div class="container">
@@ -25,7 +35,10 @@
             <td>{{this.popis}}</td>
             <td>
               <button type="button" class="btn btn-primary">upravit<i class="far fa-eye"></i></button>
-            <button type="button" class="btn btn-danger">smazat<i class="far fa-trash-alt"></i></button>
+            <form action="/admin/deleteProduct" method="POST">
+            <input type="hidden" name="ID" value="{{this.id_vyr}}">
+              <button type="submit" class="btn btn-danger">smazat<i class="far fa-trash-alt"></i></button>
+            </form>
             </td>
           </tr>
           {{/each}}

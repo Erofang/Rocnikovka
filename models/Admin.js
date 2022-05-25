@@ -29,6 +29,7 @@ exports.showProductDrink =  () => {
     })
 }
 
+//smazání produktu
 exports.deleteProduct = (ID) => {
     return new Promise((resolve, reject) => {
 		try {
@@ -40,5 +41,13 @@ exports.deleteProduct = (ID) => {
 		} catch (err) {
 			reject(err);
 		}
+	});
+};
+
+// Přidávání produktu
+exports.addProduct = (nazev, cena, popis, druh) => {
+	let sql = `INSERT INTO vyrobky(nazev, cena, popis, id_dru) VALUES ('${nazev}','${cena}', '${popis}','${druh}')`;
+	conn.query(sql, (err) => {
+		if (err) throw err;
 	});
 };
