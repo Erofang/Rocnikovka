@@ -65,6 +65,12 @@ app.use(passport.session());
 app.use(methoOverride('_method'))
 
 
+app.use(function (req, res, next) {
+	res.locals.login = req.isAuthenticated();
+	next();
+  });
+
+
 
 
 

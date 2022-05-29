@@ -6,7 +6,6 @@ const Product = require('../models/Product');
 
 
 
-
 router.get('/', async (req, res) => {
     const dataFood =   await Product.showProductFood();
     const dataDrink = await Product.showProductDrink();
