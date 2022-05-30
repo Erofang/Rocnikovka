@@ -33,7 +33,7 @@ exports.showProductDrink =  () => {
 exports.deleteProduct = (ID) => {
     return new Promise((resolve, reject) => {
 		try {
-			let sql = 'DELETE FROM vyrobky WHERE id = ?';
+			let sql = 'DELETE FROM vyrobky WHERE id_vyr = ?';
 			db.query(sql, ID, (err, results) => {
 				if (err) throw err;
 				resolve(results);
@@ -47,6 +47,27 @@ exports.deleteProduct = (ID) => {
 // Přidávání produktu
 exports.addProduct = (nazev, cena, popis, druhy) => {
 	let sql = `INSERT INTO vyrobky(nazev, cena, popis, id_dru) VALUES ('${nazev}','${cena}', '${popis}','${druhy}')`;
+	db.query(sql, (err) => {
+		if (err) throw err;
+	});
+};
+
+exports.editProduct = (ID) => {
+	return new Promise((resolve, reject) => {
+		try {
+			let sql = 'SELECT * FROM vyrobky WHERE id_vyr = ?';
+			db.query(sql, ID, (error, results) => {
+				if (error) throw error;
+				resolve(results);
+			});
+		} catch (err) {
+			reject(err);
+		}
+	});
+};
+
+exports.editProduct = (nazev, cena, popis, druhy, id) => {
+	let sql = `UPDATE vyrobky SET nazev = '${nazev}', cena = '${cena}', popis = '${popis}', id_dru = '${druhy}' WHERE id_vyr = '${id}'`;
 	db.query(sql, (err) => {
 		if (err) throw err;
 	});

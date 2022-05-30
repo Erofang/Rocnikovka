@@ -26,7 +26,7 @@ router.get('/addproduct', (req, res) => {
 //pridani produktu
 router.post('/addProduct', async (req, res) => {
 	try {
-		const { nazev, cena, popis, druhy} = req.body;
+		const {nazev, cena, popis, druhy} = req.body;
 		console.log(req.body)
 		Product.addProduct(nazev, cena, popis, druhy)
 		res.redirect('/admin');
@@ -34,14 +34,33 @@ router.post('/addProduct', async (req, res) => {
 		res.redirect('/admin/addProduct');
 	}
 });
+//zobrazeni produktu
+router.get('/editProduct/:id', async (req, res) => {
+	var id = req.params.id;
+	const data = await Product.editProduct(id);
+	res.render('admin/editProduct', {
+		title: 'edit',
+		style: '',
+		product: data,
+	});
+});
+//uprava produktu
+router.post('/editProduct/:id', async (req, res) => {
+	const {nazev, cena, popis, druhy} = req.body;
 
-/* router.get('/delete/:id', async (req, res) => {
+	var id = req.params.id;
+	await Product.editProduct(nazev, cena, popis, druhy, id,
+		res.redirect('/admin')
+	);
+});
+
+router.get('/deleteProduct/:id', async (req, res) => {
     const id = req.params.id;
 	await Product.deleteProduct(id, function (data) {
 		res.redirect('/admin');
 	});
 	res.redirect('back');
-}); */
+});
 
 
 
