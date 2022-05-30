@@ -19,7 +19,6 @@ const app = express();
 const homeRouter = require('./controllers/home');
 const profileRouter = require('./controllers/profile');
 const orderRouter = require('./controllers/order');
-const productRouter = require('./controllers/product');
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
 const adminRouter = require('./controllers/admin');
@@ -77,7 +76,6 @@ app.use(function (req, res, next) {
 //základní routa
 app.use('/', homeRouter);
 app.use('/profile', profileRouter);
-app.use('/product', productRouter);
 app.use('/order', orderRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);

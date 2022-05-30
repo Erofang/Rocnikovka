@@ -24,34 +24,24 @@ router.get('/addproduct', (req, res) => {
 });
 
 //pridani produktu
-router.post('/add', async (req, res) => {
+router.post('/addProduct', async (req, res) => {
 	try {
-		const { jmeno, prijmeni, prezdivka, email, heslo } = req.body;
-		const status = 'active';
-		console.log(req.body);
-
-		const hashedPassword = await bcrypt.hash(heslo, 10);
-		userModel.addUser(
-			jmeno,
-			prijmeni,
-			prezdivka,
-			email,
-			hashedPassword,
-			status
-		);
-		res.redirect('/admin/users');
+		const { nazev, cena, popis, druhy} = req.body;
+		console.log(req.body)
+		Product.addProduct(nazev, cena, popis, druhy)
+		res.redirect('/admin');
 	} catch {
-		res.redirect('/admin/adduser');
+		res.redirect('/admin/addProduct');
 	}
 });
 
-router.get('/delete/:id', async (req, res) => {
+/* router.get('/delete/:id', async (req, res) => {
     const id = req.params.id;
 	await Product.deleteProduct(id, function (data) {
 		res.redirect('/admin');
 	});
 	res.redirect('back');
-});
+}); */
 
 
 

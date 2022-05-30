@@ -34,7 +34,7 @@ exports.deleteProduct = (ID) => {
     return new Promise((resolve, reject) => {
 		try {
 			let sql = 'DELETE FROM vyrobky WHERE id = ?';
-			conn.query(sql, ID, (err, results) => {
+			db.query(sql, ID, (err, results) => {
 				if (err) throw err;
 				resolve(results);
 			});
@@ -45,9 +45,9 @@ exports.deleteProduct = (ID) => {
 };
 
 // Přidávání produktu
-exports.addProduct = (nazev, cena, popis, druh) => {
-	let sql = `INSERT INTO vyrobky(nazev, cena, popis, id_dru) VALUES ('${nazev}','${cena}', '${popis}','${druh}')`;
-	conn.query(sql, (err) => {
+exports.addProduct = (nazev, cena, popis, druhy) => {
+	let sql = `INSERT INTO vyrobky(nazev, cena, popis, id_dru) VALUES ('${nazev}','${cena}', '${popis}','${druhy}')`;
+	db.query(sql, (err) => {
 		if (err) throw err;
 	});
 };
