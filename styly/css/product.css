@@ -2,14 +2,13 @@ body {
 	background-color: rgb(170, 32, 32);
 }
 
-.btn {
+#tlacitko {
     background-color:rgb(2, 116, 2);
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
 }
-
-.btn:hover {
+#tlacitko:hover {
     background-color: rgb(13, 177, 13);
 }

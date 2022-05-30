@@ -5,11 +5,10 @@
         <a class="navbar-brand" href="/">U Pepegy</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><form action="/logout?_method=DELETE" method="POST"><button type="submit">Odhlásit se</button></form></li>
+        <li><form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Odhlásit</button></form></li>
       </ul>
     </div>
   </nav>
-  
   {{#each Food}}
   <div class="column">
     <div class="col-sm-6 col-md-4">
@@ -29,7 +28,7 @@
   {{/each}}
 {{/if}}
 
-
+<!-- styly pokud nejsem prihlašen-->
 
 {{#unless login}}
 <nav class="navbar navbar-inverse">

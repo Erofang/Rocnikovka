@@ -5,7 +5,7 @@
         <a class="navbar-brand" href="/">U Pepegy</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><form action="/logout?_method=DELETE" method="POST"><button type="submit">Odhlásit se</button></form></li>
+        <li><form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Odhlásit</button></form></li>
       </ul>
     </div>
   </nav>
@@ -49,9 +49,10 @@
    </div>
   </div>
   <div class="order">
-    <a href="order" class="btn ">Objednat</a>
+    <a href="order" class="btn" id="tlacitko">Objednat</a>
   </div>
 {{/if}}
+<!-- styly pokud nejsem prihlašen-->
 {{#unless login}}
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -104,6 +105,6 @@
    </div>
   </div>
   <div class="order">
-    <a href="order" class="btn ">Objednat</a>
+    <a href="order" class="btn" id="tlacitko">Objednat</a>
   </div>
 {{/unless}} 

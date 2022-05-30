@@ -1,33 +1,19 @@
-
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">U Pepegy</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="register"><span class="glyphicon glyphicon-user"></span> Registrace</a></li>
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Přihlášení</a></li>
-      </ul>
-    </div>
-  </nav>
-  
-  {{#each Food}}
-  <div class="column">
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/ras/Assets/5802fab5-fdce-468a-a830-43e8001f5a72/Derivates/c00dc34a-e73d-42f0-a86e-e2fd967d33fe.jpg" alt="...">
-        <div class="caption">
-          <h3>{{this.nazev}}</h3>
-          <p>{{this.popis}}</p>
-          <div class="clearfix">
-            <div class="price">{{this.cena}}0Kč</div>
-            <a href="#" class="btn btn-default pull-right" role="button">+</a>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {{/each}}
-            
-  
+<div class="udaje">
+  <ul>
+   <li><i class="bi bi-geo-alt-fill"></i> Zemská 661 Proboštov 417 12</li>
+   <li><i class="bi bi-telephone-fill"></i><a href="tel:+420775715735"> +420 775 715 735</a></li>
+   <li><i class="bi bi-envelope-fill"></i><a href="mailto:Upepegy@gmail.com"> Upepegy@gmail.com</a></li>
+   <li><i class="bi bi-credit-card-fill"></i> hotově, kartou</li>
+ </ul> 
+ </div>
+<div class="otev-hod">
+  <ul class="">
+   <li>Pondělí <span>9:00 - 23:00</span></li>
+   <li>Úterý <span>9:00 - 23:00</span></li>
+   <li>Středa <span>9:00 - 23:00</span></li>
+   <li>Čtvrtek <span>9:00 - 23:00</span></li>
+   <li>Pátek <span>9:00 - 01:00</span></li>
+   <li>Sobota <span>9:00 - 01:00</span></li>
+   <li>Neděle <span>9:00 - 23:00</span></li>
+ </ul> 
+</div>
