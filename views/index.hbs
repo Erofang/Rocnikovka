@@ -4,159 +4,57 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="">U Pepegy</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="product">Menu</a></li>
-    </ul>
     <ul class="nav navbar-nav navbar-right">
+      <li><a href="profile">Profil <i class="bi bi-person-circle"></i></a></li>
       <li><form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Odhlásit</button></form></li>
     </ul>
   </div>
 </nav>
-<section class="about">
-  <div class="container">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris elementum mauris vitae tortor. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. In rutrum. Nullam dapibus fermentum ipsum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Vivamus luctus egestas leo. Proin in tellus sit amet nibh dignissim sagittis. Praesent in mauris eu tortor porttitor accumsan.
-
-    Et harum quidem rerum facilis est et expedita distinctio. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Pellentesque arcu. Duis condimentum augue id magna semper rutrum. Ut tempus purus at lorem. Et harum quidem rerum facilis est et expedita distinctio. Fusce suscipit libero eget elit. Praesent vitae arcu tempor neque lacinia pretium. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Nullam sit amet magna in magna gravida vehicula. Fusce wisi.
-</div>
-</section>
+  <div class="d-flex justify-content-center" id="vyrobky">
+   <div class="col-md-5">
+    <div class="table-wrap">
+     <table class="table table-striped table-dark ">
+      <tbody>
+       <tr>
+        <th scope="col">Druh</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Složení</th>
+       </tr>
+      {{#each Food}}
+       <tr>
+        <td>{{this.nazev}}</td>
+        <td>{{this.cena}}0</td>
+        <td>{{this.popis}}</td>
+       </tr>
+      {{/each}}
+      </tbody>
+     </table>
+     <table class="table table-striped table-dark ">
+      <tbody>
+       <tr>
+        <th scope="col">Druh</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Objem</th>
+       </tr>
+      {{#each Drink}}
+       <tr>
+        <td>{{this.nazev}}</td>
+        <td>{{this.cena}}</td>
+        <td>{{this.popis}}</td>
+       </tr>
+      {{/each}}
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div class="order">
+    <a href="order" class="btn" id="tlacitko">Objednat</a>
+  </div>
           <section class="openinghours">
     <div class="openinghourscontent section">
         <div class="header">
-             <h2>Opening hours</h2>
- <span id="open-status"><small class="openorclosed">We are</small></span>
-
-        </div>
-        <table class="opening-hours-table">
-            <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
-                <td>Monday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
-                <td>Tuesday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
-                <td>Wednesday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
-                <td>Thursday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">20:00</td>
-            </tr>
-            <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
-                <td>Friday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
-                <td>Saturday</td>
-                <td class="opens">10:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
-                <td>Sunday</td>
-                <td class="opens">11:00</td>
-                <td>-</td>
-                <td class="closes">16:00</td>
-            </tr>
-        </table>
-    </div>
-</section>
-<section class="openinghours">
-    <div class="openinghourscontent section">
-        <div class="header">
-             <h2>Opening hours</h2>
- <span id="open-status"><small class="openorclosed">We are</small></span>
-
-        </div>
-        <table class="opening-hours-table">
-            <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
-                <td>Monday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
-                <td>Tuesday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
-                <td>Wednesday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
-                <td>Thursday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">20:00</td>
-            </tr>
-            <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
-                <td>Friday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
-                <td>Saturday</td>
-                <td class="opens">10:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
-                <td>Sunday</td>
-                <td class="opens">11:00</td>
-                <td>-</td>
-                <td class="closes">16:00</td>
-            </tr>
-        </table>
-    </div>
-</section> 
-<footer class="container-fluid bg-2 " id="footer"> 
-  <p>U Pepegy &copy;</p>
-</footer>
- {{/if}}
- <!-- styly pokud nejsem prihlašen-->
-{{#unless login}}
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="">U Pepegy</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="product">Menu</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Registrovat se</a></li>
-      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Přihlásit se</a></li>
-    </ul>
-  </div>
-</nav>
-<section class="about">
-  <div class="container">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris elementum mauris vitae tortor. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. In rutrum. Nullam dapibus fermentum ipsum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Vivamus luctus egestas leo. Proin in tellus sit amet nibh dignissim sagittis. Praesent in mauris eu tortor porttitor accumsan.
-
-    Et harum quidem rerum facilis est et expedita distinctio. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Pellentesque arcu. Duis condimentum augue id magna semper rutrum. Ut tempus purus at lorem. Et harum quidem rerum facilis est et expedita distinctio. Fusce suscipit libero eget elit. Praesent vitae arcu tempor neque lacinia pretium. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Nullam sit amet magna in magna gravida vehicula. Fusce wisi.
-</div>
-</section>
-<!--tabulka pro kontakní udaje-->
-  <section class="openinghours">
-    <div class="openinghourscontent section">
-        <div class="header">
-             <h2>Otevirací doba</h2>
+             <h2>Otev. doba</h2>
         </div>
         <table class="opening-hours-table">
             <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
@@ -204,60 +102,167 @@
         </table>
     </div>
 </section>
-<!--tabulka pro otevirací dobu-->
 <section class="openinghours">
     <div class="openinghourscontent section">
         <div class="header">
-             <h2>Opening hours</h2>
- <span id="open-status"><small class="openorclosed">We are</small></span>
+             <h2>Kontakt</h2>
 
         </div>
         <table class="opening-hours-table">
             <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
-                <td>Monday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
+                <td><i class="bi bi-telephone-fill"></i>:</td>
+                <td class="opens">775 715 735</td>
             </tr>
             <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
-                <td>Tuesday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
+                <td><i class="bi bi-envelope-fill"></i>:</td>
+                <td class="opens">Upepegy@seznam.cz</td>
             </tr>
             <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
-                <td>Wednesday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
+                <td><i class="bi bi-house-door-fill"></i>:</td>
+                <td class="opens">Jahodová 423, Teplice</td>
             </tr>
             <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
-                <td>Thursday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">20:00</td>
-            </tr>
-            <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
-                <td>Friday</td>
-                <td class="opens">09:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
-                <td>Saturday</td>
-                <td class="opens">10:00</td>
-                <td>-</td>
-                <td class="closes">18:00</td>
-            </tr>
-            <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
-                <td>Sunday</td>
-                <td class="opens">11:00</td>
-                <td>-</td>
-                <td class="closes">16:00</td>
+                <td><i class="bi bi-credit-card-2-front-fill"></i>:</td>
+                <td class="opens">hotově, kartou</td>
             </tr>
         </table>
     </div>
-</section>          
+</section> 
+<footer class="container-fluid bg-2 " id="footer"> 
+  <p>U Pepegy &copy;</p>
+</footer>
+ {{/if}}
+ <!-- styly pokud nejsem prihlašen--> 
+{{#unless login}}
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">U Pepegy</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Registrovat se</a></li>
+      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Přihlásit se</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="d-flex justify-content-center" id="vyrobky">
+   <div class="col-md-5">
+    <div class="table-wrap">
+     <table class="table table-striped table-dark ">
+      <tbody>
+       <tr>
+        <th scope="col">Druh</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Složení</th>
+       </tr>
+      {{#each Food}}
+       <tr>
+        <td>{{this.nazev}}</td>
+        <td>{{this.cena}}0</td>
+        <td>{{this.popis}}</td>
+       </tr>
+      {{/each}}
+      </tbody>
+     </table>
+     <table class="table table-striped table-dark ">
+      <tbody>
+       <tr>
+        <th scope="col">Druh</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Objem</th>
+       </tr>
+      {{#each Drink}}
+       <tr>
+        <td>{{this.nazev}}</td>
+        <td>{{this.cena}}</td>
+        <td>{{this.popis}}</td>
+       </tr>
+      {{/each}}
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div class="order">
+    <a href="order" class="btn" id="tlacitko">Objednat</a>
+  </div>
+<!--tabulka pro kontakní udaje-->
+            <section class="openinghours">
+    <div class="openinghourscontent section">
+        <div class="header">
+             <h2>Otev. doba</h2>
+        </div>
+        <table class="opening-hours-table">
+            <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
+                <td>Pondělí</td>
+                <td class="opens">10:00</td>
+                <td>-</td>
+                <td class="closes">22:00</td>
+            </tr>
+            <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
+                <td>Úterý</td>
+                <td class="opens">10:00</td>
+                <td>-</td>
+                <td class="closes">22:00</td>
+            </tr>
+            <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
+                <td>Středa</td>
+                <td class="opens">10:00</td>
+                <td>-</td>
+                <td class="closes">22:00</td>
+            </tr>
+            <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
+                <td>Čtvrtek</td>
+                <td class="opens">10:00</td>
+                <td>-</td>
+                <td class="closes">22:00</td>
+            </tr>
+            <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
+                <td>Pátek</td>
+                <td class="opens">10:00</td>
+                <td>-</td>
+                <td class="closes">00:00</td>
+            </tr>
+            <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
+                <td>Sobota</td>
+                <td class="opens">10:00</td>
+                <td>-</td>
+                <td class="closes">00:00</td>
+            </tr>
+            <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
+                <td>Neděle</td>
+                <td class="opens">12:00</td>
+                <td>-</td>
+                <td class="closes">22:00</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section class="openinghours">
+    <div class="openinghourscontent section">
+        <div class="header">
+             <h2>Kontakt</h2>
+        </div>
+        <table class="opening-hours-table">
+            <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
+                <td><i class="bi bi-telephone-fill"></i>:</td>
+                <td class="opens">775 715 735</td>
+            </tr>
+            <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
+                <td><i class="bi bi-envelope-fill"></i>:</td>
+                <td class="opens">Upepegy@seznam.cz</td>
+            </tr>
+            <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
+                <td><i class="bi bi-house-door-fill"></i>:</td>
+                <td class="opens">Jahodová 423, Teplice</td>
+            </tr>
+            <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
+                <td><i class="bi bi-credit-card-2-front-fill"></i>:</td>
+                <td class="opens">hotově, kartou</td>
+            </tr>
+        </table>
+    </div>
+</section>           
 <footer class="container-fluid bg-2 " id="footer"> 
   <p>U Pepegy &copy;</p>
 </footer>

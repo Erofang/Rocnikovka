@@ -8,12 +8,16 @@ body {
 .navbar-menu {
     display: flex; justify-content:center
 }
-.about {
-    border-style: solid;
-    margin-left: 150px;
-    margin-right: 150px;
-    background-color:grey
+#tlacitko {
+    background-color:rgb(2, 116, 2);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
+#tlacitko:hover {
+    background-color: rgb(13, 177, 13);
+}   
 
 .openinghours {
     font-family:Lucida Console;
@@ -78,7 +82,6 @@ body {
 
 
 #footer {
-    position: fixed;
     bottom: 0;
     padding-top: 20px;
     padding-bottom: 20px;

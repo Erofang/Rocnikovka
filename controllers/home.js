@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Product = require('../models/Product');
 const methoOverride = require('method-override');
 
 
@@ -15,10 +16,14 @@ function chceckNotAuthenticated(req, res, next) {
     }
 }
 
-router.get('/', (req, res) => {
+router.get('/', async(req, res) => {
+    const dataFood =   await Product.showProductFood();
+    const dataDrink = await Product.showProductDrink();
     res.render('index', {
         title: 'U Pepegy',
-        style: 'home.css'
+        style: 'home.css',
+        Food: dataFood,
+        Drink: dataDrink
     })
 })
 
