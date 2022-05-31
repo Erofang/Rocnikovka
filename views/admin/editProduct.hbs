@@ -8,33 +8,34 @@
         </div>
         <div class="panel-body">
           <!-- Začátek formu -->
-          <form role="form" action="/admin/editProduct/{{this.id_vyr}}" method="POST">
+          <form role="form" action="/admin/editProduct" method="post">
             <div class="row">
+               <input type="hidden" id="id" name="id" value="{{product.id_vyr}}">
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                   <!-- Input pro jméno -->
                   <a>Název</a>
                   <input type="text" name="nazev" id="nazev" class="form-control input-sm"
-                    placeholder="Šunková / kofola" >
+                    value="{{product.nazev}}" >
                 </div>
               </div>
             </div>
              <div class="form-group">
                   <!-- Input pro cenu-->
                   <a>Cena</a>
-                  <input type="text" name="cena" id="price" class="form-control input-sm" placeholder="159.90" >
+                  <input type="text" name="cena" id="price" class="form-control input-sm" value="{{product.cena}}" >
                 </div>
             <div class="form-group">
               <!-- Input pro popis-->
               <a>Složení</a>
-              <input type="text" name="popis" id="popis" class="form-control input-sm" placeholder="sýr, šunka, slanina / 0,5 l" >              
+              <input type="text" name="popis" id="popis" class="form-control input-sm" value="{{product.popis}}" >              
 
             </div>
             <label for="druhy">Druh výrobku:</label>
-            <select id="cars" name="druhy">
+            <select id="food" name="druhy">
             <option value="1" name="1">Pizza</option>
             <option value="2" name="2">Piti</option>
-            </select
+            </select>
             <!-- Button na odeslání formu-->
             <div class="form-group">
               <input type="submit" value="Upravit" class="btn btn-info btn-block">
@@ -45,4 +46,19 @@
     </div>
   </div>
 </div>
+{{!-- <script>
+ // $(document).ready(function(){
+    //$.ajax({
+       //data: JSON.stringify({
+            "nazev": /$("#nazev").val()
+        }),
+       // success: function(responseData, textStatus, jqXHR) {
+            //console.log(ok);
+        },
+        //error: function (responseData, textStatus, errorThrown) {
+            //console.log("error", responseData)
+        } 
+    });
+});
+</script> --}}
  

@@ -34,27 +34,29 @@ router.post('/addProduct', async (req, res) => {
 		res.redirect('/admin/addProduct');
 	}
 });
+
+
+
 //zobrazeni produktu
-router.get('/editProduct/:id', async (req, res) => {
+router.get('/edit/:id', async (req, res) => {
 	var id = req.params.id;
-	const data = await Product.editProduct(id);
+	const data = await Product.editProductShow(id);
+	console.log(data);
 	res.render('admin/editProduct', {
 		title: 'edit',
 		style: '',
-		product: data,
+		product: data[0],
 	});
 });
+
 //uprava produktu
-router.post('/editProduct/:id', async (req, res) => {
-	try {
-		const {nazev, cena, popis, druhy} = req.body;
-		console.log(req.body)
-		Product.editProduct(nazev, cena, popis, druhy)
-		res.redirect('/admin');
-	} catch {
-		res.redirect('/admin/editProduct');
-	}
+router.post('/editProduct', async (req, res) => {
+    const { nazev, cena, popis, druhy, id } = req.body;
+	console.log(req.body);
+    await Product.editProduct( nazev, cena, popis, druhy, id );
+	res.redirect('/admin')
 });
+
 
 router.get('/deleteProduct/:id', async (req, res) => {
     const id = req.params.id;

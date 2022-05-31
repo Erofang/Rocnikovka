@@ -37,6 +37,9 @@ body {
     font-size: 11px
 }
 
+img {
+    border: 2px solid black;
+}
 .add-experience:hover {
     background: #BA68C8;
     color: #fff;

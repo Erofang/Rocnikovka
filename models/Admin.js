@@ -1,4 +1,4 @@
-const db = require('../database')
+const db = require('../database');
 
 //sql na zobrazení tabulky produktů na mani page
 exports.showProductFood =  () => {
@@ -52,7 +52,7 @@ exports.addProduct = (nazev, cena, popis, druhy) => {
 	});
 };
 
-exports.editProduct = (ID) => {
+exports.editProductShow = (ID) => {
 	return new Promise((resolve, reject) => {
 		try {
 			let sql = 'SELECT * FROM vyrobky WHERE id_vyr = ?';
@@ -66,9 +66,15 @@ exports.editProduct = (ID) => {
 	});
 };
 
-exports.editProduct = (nazev, cena, popis, druhy, id) => {
-	let sql = `UPDATE vyrobky SET nazev = '${nazev}', cena = '${cena}', popis = '${popis}', id_dru = '${druhy}' WHERE id_vyr = '${id}'`;
-	db.query(sql, (err) => {
-		if (err) throw err;
+exports.editProduct = (nazev, cena, popis, druhy, ID) => {
+	return new Promise((resolve, reject) => {
+		try {  let sql = `UPDATE vyrobky SET nazev = '${nazev}', cena = '${cena}', popis = '${popis}', id_dru = '${druhy}' WHERE id_vyr = '${ID}'`;
+		db.query(sql, (err) => {
+			if (err) throw err;
+			resolve(true);
+		});
+	} catch (err) {
+		reject(err);
+		}
 	});
 };

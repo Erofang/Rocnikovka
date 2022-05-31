@@ -69,17 +69,22 @@ app.use(function (req, res, next) {
 	next();
   });
 
+  function isLoggedIn(req, res, next) {
+	if (req.isAuthenticated()) return next();
+	res.redirect('/login');
+}
+
 
 
 
 
 //základní routa
 app.use('/', homeRouter);
-app.use('/profile', profileRouter);
+app.use('/profile', isLoggedIn,profileRouter);
 app.use('/order', orderRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-app.use('/admin', adminRouter);
+app.use('/admin', isLoggedIn, adminRouter);
 
 
 
