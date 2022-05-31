@@ -61,7 +61,7 @@ router.get('/deleteProduct/:id', async (req, res) => {
 	await Product.deleteProduct(id, function (data) {
 		res.redirect('/admin');
 	});
-	res.redirect('register');
+	res.redirect('back');
 });
 
 
