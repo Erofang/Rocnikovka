@@ -16,7 +16,7 @@ router.get('/',async (req, res)=>{
     })
 })
 //cesta na pridavaci form
-router.get('/addproduct', (req, res) => {
+router.get('/addProduct', (req, res) => {
 	res.render('admin/addProduct', {
         title: 'Add Product',
 		style: 'admin/addProduct.css'
@@ -46,12 +46,14 @@ router.get('/editProduct/:id', async (req, res) => {
 });
 //uprava produktu
 router.post('/editProduct/:id', async (req, res) => {
-	const {nazev, cena, popis, druhy} = req.body;
-
-	var id = req.params.id;
-	await Product.editProduct(nazev, cena, popis, druhy, id,
-		res.redirect('/admin')
-	);
+	try {
+		const {nazev, cena, popis, druhy} = req.body;
+		console.log(req.body)
+		Product.editProduct(nazev, cena, popis, druhy)
+		res.redirect('/admin');
+	} catch {
+		res.redirect('/admin/editProduct');
+	}
 });
 
 router.get('/deleteProduct/:id', async (req, res) => {
@@ -59,7 +61,7 @@ router.get('/deleteProduct/:id', async (req, res) => {
 	await Product.deleteProduct(id, function (data) {
 		res.redirect('/admin');
 	});
-	res.redirect('back');
+	res.redirect('register');
 });
 
 
