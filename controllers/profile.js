@@ -3,18 +3,14 @@ const router = express.Router();
 const Profile = require('../models/Profile');
 
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    const id = req.user.id;
+    let data = await Profile.showProfileInfo(id)
     res.render('profile/index', {
         title: 'Profil',
         style: 'profile.css',
-        name: req.user.jmeno,
-        surname: req.user.prijmeni,
-        tel: req.user.mobil,
-        email: req.user.email,
-        heslo: req.user.heslo,
-        id: req.user.id_zak
+        profile: data[0]
     })
-    console.log(req.user.id_zak);
 });
 
 router.post('/', async (req, res) => {
