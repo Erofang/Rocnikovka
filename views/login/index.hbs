@@ -39,6 +39,14 @@
             <!-- Link na registraci-->
             <a href="register" class="">Ještě nemáte účet?</a>
         </div>
+        {{#if message}}
+							<div class='' id="alert" role='alert'>
+								{{message}}
+								<button type='button'class='close'data-dismiss='alert'aria-label='Close'>
+									<span aria-hidden='true'>×</span>
+								</button>
+							</div>
+						{{/if}}
         <!-- Konec formu-->
         </form>
 

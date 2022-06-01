@@ -4,7 +4,7 @@ const db = require('../database');
 exports.showProfileInfo =  (ID) => {
     return new Promise((resolve, reject) => {
         try {
-            let sql = `'SELECT * FROM zakaznici WHERE id_zak = ${ID}'`;
+            let sql = `SELECT * FROM zakaznici WHERE id_zak = ${ID}`;
 			console.log(ID)
             db.query(sql, ID, (error, results) => {
                 if (error) throw error;
