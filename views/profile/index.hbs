@@ -18,17 +18,20 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">nastavení profilu</h4>
                 </div>
+                <form role="form" action="/profile" method="post">
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Jméno</label><input type="text" class="form-control" placeholder="{{name}}" value=""></div>
-                    <div class="col-md-6"><label class="labels">Příjmení</label><input type="text" class="form-control" value="" placeholder="{{surname}}"></div>
+                    <input type="hidden" id="id" name="id" value="{{id}}">
+                    <div class="col-md-6"><label class="labels">Jméno</label><input type="text" name="jmeno" class="form-control" value="{{name}}"></div>
+                    <div class="col-md-6"><label class="labels">Příjmení</label><input type="text" name="prijmeni" class="form-control" value="{{surname}}"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Telefon</label><input type="text" class="form-control" placeholder="{{tel}}" value=""></div>
-                    <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="{{email}}" value=""></div>
-                    <div class="col-md-12"><label class="labels">Heslo</label><input type="text" class="form-control" placeholder="************************" value=""></div>
+                    <div class="col-md-12"><label class="labels">Telefon</label><input type="text" name="mobil" class="form-control" value="{{tel}}"></div>
+                    <div class="col-md-12"><label class="labels">Email</label><input type="text" name="email" class="form-control" value="{{email}}"></div>
+                    <div class="col-md-12"><label class="labels">Heslo</label><input type="text" name="heslo" class="form-control" placeholder="************************" value="{{heslo}}"></div>
                 </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
-            </div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
