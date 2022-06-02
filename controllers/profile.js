@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const { jmeno, prijmeni, mobil, email, heslo, id } = req.body;
-	//console.log(req.body);
+	console.log(req.body);
     await Profile.editProfile( jmeno, prijmeni, mobil, email, heslo, id );
 	res.redirect('/')
 });
