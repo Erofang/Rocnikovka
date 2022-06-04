@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Profile = require('../models/Profile');
+const bcrypt = require('bcrypt');
 
 
 router.get('/', async (req, res) => {
@@ -16,7 +17,8 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const { jmeno, prijmeni, mobil, email, heslo, id } = req.body;
 	console.log(req.body);
-    await Profile.editProfile( jmeno, prijmeni, mobil, email, heslo, id );
+    const hashedPassword = await bcrypt.hash(heslo, 10);
+    await Profile.editProfile( jmeno, prijmeni, mobil, email, hashedPassword, id );
 	res.redirect('/')
 });
 

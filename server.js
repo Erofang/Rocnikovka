@@ -14,6 +14,7 @@ const db = require('./database')
 
 
 
+
 const app = express();
 //nastavení cest
 const homeRouter = require('./controllers/home');
