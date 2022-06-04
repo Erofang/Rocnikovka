@@ -1,0 +1,19 @@
+<div class="udaje">
+  <ul>
+   <li><i class="bi bi-geo-alt-fill"></i> Zemská 661 Proboštov 417 12</li>
+   <li><i class="bi bi-telephone-fill"></i><a href="tel:+420775715735"> +420 775 715 735</a></li>
+   <li><i class="bi bi-envelope-fill"></i><a href="mailto:Upepegy@gmail.com"> Upepegy@gmail.com</a></li>
+   <li><i class="bi bi-credit-card-fill"></i> hotově, kartou</li>
+ </ul> 
+ </div>
+<div class="otev-hod">
+  <ul class="">
+   <li>Pondělí <span>9:00 - 23:00</span></li>
+   <li>Úterý <span>9:00 - 23:00</span></li>
+   <li>Středa <span>9:00 - 23:00</span></li>
+   <li>Čtvrtek <span>9:00 - 23:00</span></li>
+   <li>Pátek <span>9:00 - 01:00</span></li>
+   <li>Sobota <span>9:00 - 01:00</span></li>
+   <li>Neděle <span>9:00 - 23:00</span></li>
+ </ul> 
+</div>

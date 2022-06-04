@@ -46,11 +46,7 @@ img {
     cursor: pointer;
     border: solid 1px #BA68C8
 }
-.footer {
-    position: fixed;
-    width:100%;
-    bottom: 0;
-}
+
  /* footer section*/
  .footer_section {
     background-color: #222831;
@@ -66,7 +62,7 @@ img {
   .footer_section h4,
   .footer_section .footer-logo {
     font-weight: 600;
-    margin-bottom: 20px;
+   
     font-family: 'Dancing Script', cursive;
   }
   
