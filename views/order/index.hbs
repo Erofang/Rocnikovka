@@ -10,21 +10,15 @@
     </div>
   </nav>
   {{#each Food}}
-  <div class="column">
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/ras/Assets/5802fab5-fdce-468a-a830-43e8001f5a72/Derivates/c00dc34a-e73d-42f0-a86e-e2fd967d33fe.jpg" alt="...">
-        <div class="caption">
-          <h3>{{this.nazev}}</h3>
-          <p>{{this.popis}}</p>
-          <div class="clearfix">
-            <div class="price">{{this.cena}}0Kč</div>
-            <a href="#" class="btn btn-default pull-right" role="button">+</a>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
+              <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">{{this.nazev}}</span>
+                    <img class="shop-item-image" src="https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/ras/Assets/5802fab5-fdce-468a-a830-43e8001f5a72/Derivates/c00dc34a-e73d-42f0-a86e-e2fd967d33fe.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">{{this.cena}}0</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
   {{/each}}
   <!--tabulka pro kontakní udaje-->           
   <footer class="footer_section">
@@ -108,32 +102,70 @@
       </ul>
     </div>
   </nav>
-  
-  {{#each Food}}
-              <div class="shop-items">
-                <div class="shop-item">
-                    <span class="shop-item-title">{{this.nazev}}</span>
-                    <img class="shop-item-image" src="https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/ras/Assets/5802fab5-fdce-468a-a830-43e8001f5a72/Derivates/c00dc34a-e73d-42f0-a86e-e2fd967d33fe.jpg">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">{{this.cena}}0</span>
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                    </div>
-                </div>
-  {{/each}}
+    <div class="d-flex justify-content-center" id="vyrobky">
+   <div class="col-md-5">
+    <div class="table-wrap">
+     <table class="table table-striped table-dark ">
+      <tbody>
+       <tr>
+        <th scope="col">Druh</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Složení</th>
+        <th scope="col"></th>
+       </tr>
+      {{#each Food}}
+      <div class="shop-items">
+       <tr class="shop-item">
+        <td class="shop-item-title">{{this.nazev}}</td>
+        <td class="shop-item-price">{{this.cena}}0</td>
+        <td>{{this.popis}}</td>
+        <td>
+          <button class="btn btn-primary shop-item-button" type="button">Přidat</button>
+        </td>
+       </tr>
+      </div>
+      {{/each}}
+      </tbody>
+     </table>
+     <table class="table table-striped table-dark ">
+      <tbody>
+       <tr>
+        <th scope="col">Druh</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Objem</th>
+        <th scope="col"></th>
+       </tr>
+      {{#each Drink}}
+      <div class="shop-items">
+       <tr class="shop-item">
+        <td class="shop-item-title">{{this.nazev}}</td>
+        <td class="shop-item-price">{{this.cena}}</td>
+        <td>{{this.popis}}</td>
+        <td>
+          <button class="btn btn-primary shop-item-button" type="button">Přidat</button>
+        </td>
+       </tr>
+      </div>
+      {{/each}}
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
     <section class="container content-section">
-            <h2 class="section-header">CART</h2>
+            <h2 class="section-header">KOŠÍK</h2>
             <div class="cart-row">
-                <span class="cart-item cart-header cart-column">ITEM</span>
-                <span class="cart-price cart-header cart-column">PRICE</span>
-                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                <span class="cart-item cart-header cart-column">PRODUKT</span>
+                <span class="cart-price cart-header cart-column">CENA</span>
+                <span class="cart-quantity cart-header cart-column">MNOŽSTVÍ</span>
             </div>
             <div class="cart-items">
             </div>
             <div class="cart-total">
-                <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0</span>
+                <strong class="cart-total-title">Celkem</strong>
+                <span class="cart-total-price">0Kč</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+            <button class="btn btn-primary btn-purchase" type="button">OBJEDNAT</button>
         </section>
   <!--tabulka pro kontakní udaje-->           
   <footer class="footer_section">
@@ -269,12 +301,12 @@ function addToCartClicked(event) {
     let shopItem = button.parentElement.parentElement
     let title = shopItem.getElementsByClassName('shop-item-title')[0].innerText 
     let price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-    let imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-    addItemToCart(title, price, imageSrc)
+    //let imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+    addItemToCart(title, price)
     updateCartTotal()
 }
 
-function addItemToCart(title, price, imageSrc) {
+function addItemToCart(title, price) {
     let cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     let cartItems = document.getElementsByClassName('cart-items')[0]
@@ -288,7 +320,6 @@ function addItemToCart(title, price, imageSrc) {
    
    let cartRowContents = `
         <div class="cart-item cart-column">
-            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
             <span class="cart-item-title">${title}</span>
         </div>
         <span class="cart-price cart-column">${price}</span>

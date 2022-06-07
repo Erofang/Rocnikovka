@@ -98,3 +98,14 @@
     </div>
   </div>
 </section>
+
+
+<div class="shop-items">
+  <div class="shop-item">
+      <span class="shop-item-title">{{this.nazev}}</span>
+      <img class="shop-item-image" src="https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/ras/Assets/5802fab5-fdce-468a-a830-43e8001f5a72/Derivates/c00dc34a-e73d-42f0-a86e-e2fd967d33fe.jpg">
+      <div class="shop-item-details">
+          <span class="shop-item-price">{{this.cena}}0</span>
+          <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+      </div>
+  </div>
