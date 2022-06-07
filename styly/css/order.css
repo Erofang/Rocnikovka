@@ -2,20 +2,11 @@ body {
 	background: #e1f4f3; 
 }
 
-.thumbnail {
-    width: 400px;
-    background-color: green;
-    border-color: #333333;
+.navbar-inverse {
+  background-color:#706c61;
+  border-color: #706c61;
 }
 
-.thumbnail img {
-    max-height: 150px;
-}
-
-.price {
-    font-weight: bold;
-    font-size: 16px;
-}
 
  /* footer section*/
  .footer_section {
@@ -64,7 +55,7 @@ body {
   }
   
   .footer_section .footer_contact .contact_link_box a:hover {
-    color: #ffbe33;
+    color: #428bca;
   }
   
   .footer_section .footer-logo {
@@ -107,7 +98,7 @@ body {
   }
   
   .footer_section .footer_social a:hover {
-    color: #ffbe33;
+    color: #428bca;
   }
   
   .footer_section .footer-info {
