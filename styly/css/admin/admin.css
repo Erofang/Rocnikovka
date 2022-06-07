@@ -1,5 +1,7 @@
 
-
+body { 
+	background: #e1f4f3; 
+}
 
 .container {
     padding: 2rem 0rem;

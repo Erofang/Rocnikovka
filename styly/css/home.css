@@ -1,9 +1,33 @@
 
-body {
-    background-color: rgb(170, 32, 32);
+.first-color { 
+	background: #333333; 
 }
+	
+.second-color { 
+	background: #ffffff; 
+}
+
+.third-color { 
+  background: #e1f4f3;
+}
+
+.fourth-color { 
+	background: #706c61; 
+}
+
+body { 
+	background: #e1f4f3; 
+}
+
 .navbar-inverse {
-    background-color:#0f1011;
+    background-color:#706c61;
+    border-color: #706c61;
+}
+#brand {
+  color: #e1f4f3;
+}
+#profil {
+  color: #e1f4f3;
 }
 .navbar-menu {
     display: flex; justify-content:center
@@ -21,7 +45,7 @@ body {
 
   /* footer section*/
   .footer_section {
-    background-color: #222831;
+    background-color: #333333;
     color: #ffffff;
     padding: 75px 0 40px 0;
     text-align: center;
@@ -66,7 +90,7 @@ body {
   }
   
   .footer_section .footer_contact .contact_link_box a:hover {
-    color: #ffbe33;
+    color: #e1f4f3;
   }
   
   .footer_section .footer-logo {
@@ -109,7 +133,7 @@ body {
   }
   
   .footer_section .footer_social a:hover {
-    color: #ffbe33;
+    color: #e1f4f3;
   }
   
   .footer_section .footer-info {
@@ -127,12 +151,6 @@ body {
   }
 
 
-
-
-.bg-2 {
-    background-color: #0f1011;
-    color: #9D9D9D;
-}
 
 
 
