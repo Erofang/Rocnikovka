@@ -8,11 +8,13 @@ const Product = require('../models/Admin');
 router.get('/',async (req, res)=>{
     const dataFood =   await Product.showProductFood();
     const dataDrink = await Product.showProductDrink();
+	const nick = req.user.jmeno;
     res.render('admin/index', {
         title: 'Admin',
         style: '/admin/admin.css',
         Food: dataFood,
-        Drink: dataDrink
+        Drink: dataDrink,
+		Nick: nick
     })
 })
 //cesta na pridavaci form

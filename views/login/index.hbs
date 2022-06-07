@@ -35,8 +35,17 @@
                     class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body">Přihlásit</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">už máte účet? <a href="login"
-                    class="fw-bold text-body"><u>Přihlásit</u></a></p>
+                <p class="text-center text-muted mt-5 mb-0">ještě nemáte účet? <a href="register"
+                    class="fw-bold text-body"><u>Registrovat</u></a></p>
+
+                    {{#if message}}
+							<div class='' id="alert" role='alert'>
+								{{message}}
+								<button type='button'class='close'data-dismiss='alert'aria-label='Close'>
+									<span aria-hidden='true'>×</span>
+								</button>
+							</div>
+						{{/if}}
 
               </form>
 
@@ -48,20 +57,13 @@
   </div>
 </section>
 
-        {{#if message}}
-							<div class='' id="alert" role='alert'>
-								{{message}}
-								<button type='button'class='close'data-dismiss='alert'aria-label='Close'>
-									<span aria-hidden='true'>×</span>
-								</button>
-							</div>
-						{{/if}}
-        <!-- Konec formu-->
-        </form>
 
       </div>
     </div>
   </div>
+</div>
+<div class="vypln">
+
 </div>
 
 <!--tabulka pro kontakní udaje-->           

@@ -38,7 +38,9 @@ body {
 #tlacitko:hover {
     background-color: rgb(13, 177, 13);
 }   
-
+.vypln{
+  height: 200px;  
+}
    /* footer section*/
  .footer_section {
   background-color: #222831;

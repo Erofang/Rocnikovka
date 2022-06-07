@@ -5,21 +5,16 @@ body {
 .navbar-inverse {
   background-color:#706c61;
   border-color: #706c61;
+  margin-bottom: 150px
 }
-.centered-form {
-	margin-top: 200px;
-}
-.centered-form .panel-heading{
-	color: white;
-	background: #333333;
 
-}
-.centered-form .panel {
-	background-color: #333333;
-}
 
 #alert {
-	color: white;
+	color: black;
+}
+
+.vypln {
+  height: 200px;
 }
  /* footer section*/
  .footer_section {
