@@ -1,44 +1,53 @@
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">U Pepegy</a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">U Pepegy</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="register"><span class="glyphicon glyphicon-user"></span> Registrace</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Přihlášení</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="register-form">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Přihlášení</h2>
+
+              <form role="form" action="/login" method="POST">
+
+                <div class="form-outline mb-4">
+                  <input type="email" name="email" id="form3Example1cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example1cg">Email</label>
+                </div>
+
+              <div class="form-outline mb-4">
+                <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
+                <label class="form-label" for="form3Example4cg">Heslo</label>
+              </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body">Přihlásit</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">už máte účet? <a href="login"
+                    class="fw-bold text-body"><u>Přihlásit</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
-    <div class="container">
-  <div class="row centered-form">
-    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Přihlášení</h3>
-        </div>
-        <div class="panel-body">
-          <!-- Začátek formu -->
-          <form role="form" action="/login" method="POST">
-            <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <!-- Input pro email-->
-              <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email" required>              
+</section>
 
-            </div>
-            <div class="form-group">
-              <!-- Input pro heslo-->
-              <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Heslo" required>
-            </div>
-
-            <div class="form-group">
-              <!-- Button na odeslání formu-->
-              <input type="submit" value="Přihlásit" class="btn btn-info btn-block">
-
-            </div>
-            <!-- Link na registraci-->
-            <a href="register" class="">Ještě nemáte účet?</a>
-        </div>
         {{#if message}}
 							<div class='' id="alert" role='alert'>
 								{{message}}

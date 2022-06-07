@@ -1,23 +1,20 @@
 body { 
 	background: #e1f4f3; 
 }
-.centered-form {
-	margin-top: 200px;
-}
-.centered-form .panel-heading{
-	color: white;
-	background: #333333;
 
+.navbar-inverse {
+  background-color:#706c61;
+  border-color: #706c61;
+  margin-bottom: 20px;
 }
-.centered-form .panel {
-	background-color: #333333;
-}
+
  /* footer section*/
  .footer_section {
     background-color: #222831;
     color: #ffffff;
     padding: 75px 0 40px 0;
     text-align: center;
+    margin-top: 20px;
   }
   
   .footer_section h4 {
@@ -58,7 +55,7 @@ body {
   }
   
   .footer_section .footer_contact .contact_link_box a:hover {
-    color: #ffbe33;
+    color: #428bca;
   }
   
   .footer_section .footer-logo {
@@ -101,7 +98,7 @@ body {
   }
   
   .footer_section .footer_social a:hover {
-    color: #ffbe33;
+    color: #428bca;
   }
   
   .footer_section .footer-info {
