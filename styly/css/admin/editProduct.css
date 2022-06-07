@@ -1,3 +1,18 @@
 body { 
 	background: #e1f4f3; 
 }
+
+.navbar-inverse {
+    background-color:#706c61;
+    border-color: #706c61;
+}
+#brand {
+  color: #e1f4f3;
+}
+#profil {
+  color: #e1f4f3;
+}
+.navbar-menu {
+    display: flex; 
+    justify-content:center;
+}

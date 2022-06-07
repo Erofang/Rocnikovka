@@ -10,7 +10,7 @@ router.get('/',async (req, res)=>{
     const dataDrink = await Product.showProductDrink();
     res.render('admin/index', {
         title: 'Admin',
-        style: 'admin/admin.css',
+        style: '/admin/admin.css',
         Food: dataFood,
         Drink: dataDrink
     })
@@ -19,7 +19,7 @@ router.get('/',async (req, res)=>{
 router.get('/addProduct', (req, res) => {
 	res.render('admin/addProduct', {
         title: 'Add Product',
-		style: 'admin/addProduct.css'
+		style: '/admin/addProduct.css',
 	});
 });
 
@@ -44,7 +44,7 @@ router.get('/edit/:id', async (req, res) => {
 	console.log(data);
 	res.render('admin/editProduct', {
 		title: 'edit',
-		style: '',
+		style: 'admin/editProduct.css',
 		product: data[0],
 	});
 });
