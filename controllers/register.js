@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 const dotenv = require('dotenv').config();
 const Register = require('../models/Register');
-
+  
 
 
 
@@ -52,14 +52,14 @@ router.post('/', chceckNotAuthenticated, async (req, res) =>{
     html: output, 
   });
 
-  console.log("Message sent: %s", info.messageId);
+   console.log("Message sent: %s", info.messageId); 
  
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  /* console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));  */
   
     try {
-        const {jmeno,prijmeni, mobil, email, password} = req.body;
+        const {jmeno,prijmeni, mobil, email, heslo} = req.body;
         console.log(req.body);
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(heslo, 10);
         Register.register(jmeno, prijmeni, mobil, email, hashedPassword);
         res.redirect('/login')
     } catch {
@@ -71,9 +71,3 @@ router.post('/', chceckNotAuthenticated, async (req, res) =>{
 
 
 module.exports = router;
-
-
-
- 
-    
-
