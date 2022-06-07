@@ -1,5 +1,5 @@
 body {
-	background-color: whites/* rgb(170, 32, 32) */;
+	background-color: rgb(170, 32, 32) ;
 }
 
 .thumbnail {
@@ -125,12 +125,6 @@ body {
   }
 
 
-
-
-.bg-2 {
-    background-color: #0f1011;
-    color: #9D9D9D;
-}
 
 .shop-item {
   margin: 30px;
