@@ -9,6 +9,7 @@ const flash = require('connect-flash');
 const cookieParser = require('cookie-parser')
 const methoOverride = require('method-override')
 const db = require('./database')
+const multer = require('multer');
 
 
 
@@ -40,7 +41,7 @@ app.set('views', './views')
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//static routa na css
+//static routa na public
 app.use(express.static(__dirname + '/public'));
 
 

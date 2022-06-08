@@ -9,12 +9,12 @@
     </div>
   </nav>
 
-<form role="form" action="/profile/noveHeslo" method="post">
+  <form role="form" action="/profile/profilePic" method="post" enctype="multipart/form-data">
                 <div class="row mt-2">
                     <input type="hidden" id="id" name="id" value="{{profile.id_zak}}">
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Heslo</label><input type="password" name="heslo" class="form-control" value="{{profile.heslo}}"></div>
+                    <div class="col-md-12"><label class="labels">Image</label><input type="file" name="image" class="form-control" value="{{profile.heslo}}"></div>
                 </div>
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Uložit změny</button></div>
                 </div>

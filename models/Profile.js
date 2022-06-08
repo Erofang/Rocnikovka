@@ -42,3 +42,16 @@ exports.editPassword = (hashedPassword, ID) => {
 		}
 	});
 };
+
+exports.editImage = (image, ID) => {
+    return new Promise((resolve, reject) => {
+        try { let sql = `UPDATE zakaznici SET image = '${image}' WHERE id_zak = '${ID}'`;
+        db.query(sql, (err) =>{
+            if (err) throw err;
+            resolve(true);
+        });
+    } catch (err) {
+        reject(err);
+    }
+    });
+};
