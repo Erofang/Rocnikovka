@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     let data = await Profile.showProfileInfo(id)
     res.render('profile/index', {
         title: 'Profil',
-        style: 'profile.css',
+        style: 'profile/profile.css',
         profile: data[0],
     })
 });
@@ -24,21 +24,34 @@ router.post('/', async (req, res) => {
 	res.redirect('/profile')
 });
 
+
+
 router.get('/noveHeslo', async (req, res) => {
     const id = req.user.id_zak;
     let data = await Profile.showProfileInfo(id)
     res.render('profile/noveHeslo', {
         title: 'NoveHeslo',
-        style: 'noveHeslo.css',
+        style: 'profile/noveHeslo.css',
         profile: data[0],
     })
 })
+
+router.post('/noveHeslo', async (req, res) => {
+    const { heslo, id } = req.body;
+	console.log(req.body);
+    const hashedPassword = await bcrypt.hash(heslo, 10);
+    await Profile.editPassword( hashedPassword, id );
+    res.redirect('/profile')
+})
+
+
+
 
 
 router.get('/profilePic', (req, res) => {
 	res.render('profile/profilePic', {
 		title: 'Update profile picture',
-		style: 'profilePic.css',
+		style: 'profile/profilePic.css',
 	});
 });
 
@@ -68,13 +81,7 @@ router.post('/profilePic', upload.single('image') ,async (req, res) => {
     }
 })
 
-router.post('/noveHeslo', async (req, res) => {
-    const { heslo, id } = req.body;
-	console.log(req.body);
-    const hashedPassword = await bcrypt.hash(heslo, 10);
-    await Profile.editPassword( hashedPassword, id );
-    res.redirect('/profile')
-})
+
 
 
 

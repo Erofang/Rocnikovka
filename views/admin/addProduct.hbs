@@ -10,50 +10,35 @@
     </ul>
   </div>
 </nav>
-<div class="container">
-  <div class="row centered-form">
-    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Přidat produkt</h3>
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <a href="/profile/profilePic"><img class="rounded-circle mt-5" width="150px" src='/profilePics/{{profile.image}}'></a>
+                <span class="font-weight-bold"></span>{{profile.jmeno}}<span class="text-black-50">{{profile.email}}</span><span> </span></div>
         </div>
-        <div class="panel-body">
-          <!-- Začátek formu -->
-          <form role="form" action="/admin/addProduct" method="POST">
-            <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <!-- Input pro jméno -->
-                  <a>Název</a>
-                  <input type="text" name="nazev" id="nazev" class="form-control input-sm"
-                    placeholder="Šunková / kofola" required>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">nastavení profilu</h4>
                 </div>
-              </div>
-            </div>
-             <div class="form-group">
-                  <!-- Input pro cenu-->
-                  <a>Cena</a>
-                  <input type="text" name="cena" id="price" class="form-control input-sm" placeholder="159.90" required>
+                <form role="form" action="/profile" method="post">
+                <div class="row mt-2">
+                    <input type="hidden" id="id" name="id" value="{{profile.id_zak}}">
+                    <div class="col-md-6"><label class="labels">Jméno</label><input type="text" name="jmeno" class="form-control" value="{{profile.jmeno}}"></div>
+                    <div class="col-md-6"><label class="labels">Příjmení</label><input type="text" name="prijmeni" class="form-control" value="{{profile.prijmeni}}"></div>
                 </div>
-            <div class="form-group">
-              <!-- Input pro popis-->
-              <a>Složení</a>
-              <input type="text" name="popis" id="popis" class="form-control input-sm" placeholder="sýr, šunka, slanina / 0,5 l" required>              
-
-            </div>
-            <label for="druhy">Druh výrobku:</label>
-            <select id="cars" name="druhy">
-            <option value="1" name="1">Pizza</option>
-            <option value="2" name="2">Piti</option>
-            </select
-            <!-- Button na odeslání formu-->
-            <div class="form-group">
-              <input type="submit" value="Přidat" class="btn btn-info btn-block">
-            </div>
-         </div>
-        </form>
-      </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Telefon</label><input type="text" name="mobil" class="form-control" value="{{profile.mobil}}"></div>
+                    <div class="col-md-12"><label class="labels">Email</label><input type="email" name="email" class="form-control" value="{{profile.email}}"></div>
+                    <a href="/profile/noveHeslo " type="button" class="btn btn-primary">Změnit heslo</a>
+                    {{!-- <div class="col-md-12"><label class="labels">Heslo</label><input type="password" name="heslo" class="form-control" value="{{profile.heslo}}"></div> --}}
+                </div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Uložit změny</button></div>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 </div>
- 
+</div>
+</div>

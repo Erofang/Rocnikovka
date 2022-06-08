@@ -1,24 +1,49 @@
 body { 
-	background: green; 
-}
-.centered-form {
-	margin-top: 200px;
-}
-.centered-form .panel-heading{
-	color: white;
-	background: #333333;
-
-}
-.centered-form .panel {
-	background-color: #333333;
-}
-.footer {
-    position: fixed;
-    width:100%;
-    bottom: 0;
-}
-#footer {
-	background-color: #333333;
+	background: #e1f4f3; 
 }
 
+.navbar-inverse {
+  background-color:#706c61;
+  border-color: #706c61;
+  height: 100px;
+  margin-bottom: 100px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #706c61
+}
+
+.profile-button {
+    background: #706c61;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #222831
+}
+
+.profile-button:focus {
+    background: #706c61;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #706c61;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #706c61;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+img {
+    border: 2px solid black;
+}
   

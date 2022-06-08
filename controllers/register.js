@@ -58,9 +58,10 @@ router.post('/', chceckNotAuthenticated, async (req, res) =>{
   
     try {
         const {jmeno,prijmeni, mobil, email, heslo} = req.body;
+        const image = '1654717381083.jpg'
         console.log(req.body);
         const hashedPassword = await bcrypt.hash(heslo, 10);
-        Register.register(jmeno, prijmeni, mobil, email, hashedPassword);
+        Register.register(jmeno, prijmeni, mobil, email, hashedPassword, image);
         res.redirect('/login')
     } catch {
         res.redirect('/')

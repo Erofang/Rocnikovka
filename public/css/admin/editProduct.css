@@ -3,16 +3,47 @@ body {
 }
 
 .navbar-inverse {
-    background-color:#706c61;
-    border-color: #706c61;
+  background-color:#706c61;
+  border-color: #706c61;
+  height: 100px;
+  margin-bottom: 100px;
 }
-#brand {
-  color: #e1f4f3;
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #706c61
 }
-#profil {
-  color: #e1f4f3;
+
+.profile-button {
+    background: #706c61;
+    box-shadow: none;
+    border: none
 }
-.navbar-menu {
-    display: flex; 
-    justify-content:center;
+
+.profile-button:hover {
+    background: #222831
 }
+
+.profile-button:focus {
+    background: #706c61;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #706c61;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #706c61;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+img {
+    border: 2px solid black;
+}
+  

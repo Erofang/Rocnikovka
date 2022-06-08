@@ -1,48 +1,46 @@
 
-    <div class="container">
-  <div class="row centered-form">
-    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Přidat produkt</h3>
+ 
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" id="brand" href="/">U Pepegy</a>
+      <a class="navbar-brand" id="admin" href="/admin">Admin</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Odhlásit</button></form></li>
+    </ul>
+  </div>
+</nav>
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <a href="/profile/profilePic"><img class="rounded-circle mt-5" width="150px" src='/profilePics/{{profile.image}}'></a>
+            </div>
         </div>
-        <div class="panel-body">
-          <!-- Začátek formu -->
-          <form role="form" action="/admin/editProduct" method="post">
-            <div class="row">
-               <input type="hidden" id="id" name="id" value="{{product.id_vyr}}">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <!-- Input pro jméno -->
-                  <a>Název</a>
-                  <input type="text" name="nazev" id="nazev" class="form-control input-sm"
-                    value="{{product.nazev}}" >
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Úprava produktu</h4>
                 </div>
-              </div>
-            </div>
-             <div class="form-group">
-                  <!-- Input pro cenu-->
-                  <a>Cena</a>
-                  <input type="text" name="cena" id="price" class="form-control input-sm" value="{{product.cena}}" >
+                <form role="form" action="/admin/editProduct" method="post">
+                <div class="row mt-2">
+                    <input type="hidden" id="id" name="id" value="{{product.id_vyr}}">
+                    <div class="col-md-6"><label class="labels">Název</label><input type="text" name="nazev" class="form-control" value="{{product.nazev}}"></div>
+                    <div class="col-md-6"><label class="labels">Cena</label><input type="text" name="cena" class="form-control" value="{{product.cena}}"></div>
                 </div>
-            <div class="form-group">
-              <!-- Input pro popis-->
-              <a>Složení</a>
-              <input type="text" name="popis" id="popis" class="form-control input-sm" value="{{product.popis}}" >              
-
-            </div>
-            <label for="druhy">Druh výrobku:</label>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Popis</label><input type="text" name="popis" class="form-control" value="{{product.popis}}"></div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Uložit změny</button></div>
+                </div>
+                 <label for="druhy">Druh výrobku:</label>
             <select id="food" name="druhy">
             <option value="1" name="1">Pizza</option>
             <option value="2" name="2">Piti</option>
             </select>
-            <!-- Button na odeslání formu-->
-            <div class="form-group">
-              <input type="submit" value="Upravit" class="btn btn-info btn-block">
-            </div>
-         </div>
-        </form>
-      </div>
+            </form>
+        </div>
     </div>
-  </div>
+</div>
+</div>
 </div>
