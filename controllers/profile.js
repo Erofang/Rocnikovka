@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const { jmeno, prijmeni, mobil, email, heslo, id } = req.body;
+    const { jmeno, prijmeni, mobil, email, id } = req.body;
 	console.log(req.body);
-    const hashedPassword = await bcrypt.hash(heslo, 10);
+    /* const hashedPassword = await bcrypt.hash(heslo, 10); */
     await Profile.editProfile( jmeno, prijmeni, mobil, email, id );
-	res.redirect('/')
+	res.redirect('/profile')
 });
 
 router.get('/noveHeslo', async (req, res) => {
@@ -38,7 +38,7 @@ router.post('/noveHeslo', async (req, res) => {
     const { heslo, id } = req.body;
 	console.log(req.body);
     const hashedPassword = await bcrypt.hash(heslo, 10);
-    await Profile.editProfile( hashedPassword, id );
+    await Profile.editPassword( hashedPassword, id );
     res.redirect('/profile')
 })
 
