@@ -21,7 +21,7 @@ router.get('/',async (req, res)=>{
 router.get('/addProduct', (req, res) => {
 	res.render('admin/addProduct', {
         title: 'Add Product',
-		style: '/admin/addProduct.css',
+		style: 'admin/addProduct.css',
 	});
 });
 

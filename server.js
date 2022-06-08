@@ -41,8 +41,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //static routa na css
-const styly = path.join(__dirname, 'styly');
-app.use(express.static('./styly'));
+app.use(express.static(__dirname + '/styly'));
 
 
 

@@ -27,7 +27,7 @@ router.get('/noveHeslo', async (req, res) => {
     let data = await Profile.showProfileInfo(id)
     res.render('profile/noveHeslo', {
         title: 'NoveHeslo',
-        style: 'noveHeslo.css',
+        style: '/noveHeslo.css',
         profile: data[0],
     })
 })
