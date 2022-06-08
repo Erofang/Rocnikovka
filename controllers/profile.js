@@ -18,20 +18,28 @@ router.post('/', async (req, res) => {
     const { jmeno, prijmeni, mobil, email, heslo, id } = req.body;
 	console.log(req.body);
     const hashedPassword = await bcrypt.hash(heslo, 10);
-    await Profile.editProfile( jmeno, prijmeni, mobil, email, hashedPassword, id );
+    await Profile.editProfile( jmeno, prijmeni, mobil, email, id );
 	res.redirect('/')
 });
 
 router.get('/noveHeslo', async (req, res) => {
-    res.render('pr0file/noveHeslo', {
+    const id = req.user.id_zak;
+    let data = await Profile.showProfileInfo(id)
+    res.render('profile/noveHeslo', {
         title: 'NoveHeslo',
-        style: 'noveHeslo.css'
+        style: 'noveHeslo.css',
+        profile: data[0],
     })
 })
 
 
 router.post('/noveHeslo', async (req, res) => {
-
+    
+    const { heslo, id } = req.body;
+	console.log(req.body);
+    const hashedPassword = await bcrypt.hash(heslo, 10);
+    await Profile.editProfile( hashedPassword, id );
+    res.redirect('/profile')
 })
 
 
