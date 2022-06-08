@@ -22,6 +22,17 @@ router.post('/', async (req, res) => {
 	res.redirect('/')
 });
 
+router.get('/noveHeslo', async (req, res) => {
+    res.render('pr0file/noveHeslo', {
+        title: 'NoveHeslo',
+        style: 'noveHeslo.css'
+    })
+})
+
+
+router.post('/noveHeslo', async (req, res) => {
+
+})
 
 
 

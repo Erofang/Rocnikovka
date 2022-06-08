@@ -1,0 +1,14 @@
+<form role="form" action="/profile" method="post">
+                <div class="row mt-2">
+                    <input type="hidden" id="id" name="id" value="{{profile.id_zak}}">
+                    <div class="col-md-6"><label class="labels">Jméno</label><input type="text" name="jmeno" class="form-control" value="{{profile.jmeno}}"></div>
+                    <div class="col-md-6"><label class="labels">Příjmení</label><input type="text" name="prijmeni" class="form-control" value="{{profile.prijmeni}}"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Telefon</label><input type="text" name="mobil" class="form-control" value="{{profile.mobil}}"></div>
+                    <div class="col-md-12"><label class="labels">Email</label><input type="email" name="email" class="form-control" value="{{profile.email}}"></div>
+                    <div class="col-md-12"><label class="labels">Heslo</label><input type="password" name="heslo" class="form-control" value="{{profile.heslo}}"></div>
+                </div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Uložit změny</button></div>
+                </div>
+            </form>
