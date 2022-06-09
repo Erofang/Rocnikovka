@@ -12,6 +12,17 @@ body {
 #nav {
   border-radius: 0px;
 }
+
+#tlacitko {
+  transition: transform 0.5s;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tlacitko:hover { 
+  transform: scale(1.05);
+}
 .vypln{
   height: 200px;  
 }
@@ -33,13 +44,4 @@ body {
     position: relative;
   }
 
-  #tlacitko {
-    background-color:rgb(2, 116, 2);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-}
-#tlacitko:hover {
-    background-color: rgb(13, 177, 13);
-}
+ 
