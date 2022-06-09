@@ -16,6 +16,7 @@
      <table class="table table-striped table-dark ">
       <tbody>
        <tr>
+        <th scope="col">Image</th>
         <th scope="col">Druh</th>
         <th scope="col">Cena</th>
         <th scope="col">Složení</th>
@@ -24,6 +25,7 @@
       {{#each Food}}
       <div class="shop-items">
        <tr class="shop-item">
+        <td class="shop-item-image"><img src="public/{{image}}"></img</td>
         <td class="shop-item-title">{{this.nazev}}</td>
         <td class="shop-item-price">{{this.cena}} Kč</td>
         <td>{{this.popis}}</td>
@@ -46,6 +48,7 @@
       {{#each Drink}}
       <div class="shop-items">
        <tr class="shop-item">
+        <td class="shop-item-image"><img class="rounded-circle mt-5" width="150px" src='/profilePics/{{this.image}}'></td>
         <td class="shop-item-title">{{this.nazev}}</td>
         <td class="shop-item-price">{{this.cena}} Kč</td>
         <td>{{this.popis}}</td>
@@ -169,6 +172,7 @@
      <table class="table table-striped table-dark ">
       <tbody>
        <tr>
+        <th scope="col">Image</th>
         <th scope="col">Druh</th>
         <th scope="col">Cena</th>
         <th scope="col">Složení</th>
@@ -177,6 +181,7 @@
       {{#each Food}}
       <div class="shop-items">
        <tr class="shop-item">
+        <td class="shop-item-image"><img class="rounded-circle mt-5" width="150px" src='/profilePics/{{this.image}}'></td>
         <td class="shop-item-title">{{this.nazev}}</td>
         <td class="shop-item-price">{{this.cena}} Kč</td>
         <td>{{this.popis}}</td>

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse" id="nav">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">U Pepegy</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+      <li><form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Odhlásit</button></form></li>
+    </ul>
+    </div>
+  </nav>
+
+  <form role="form" action="/profile/productPic" method="post" enctype="multipart/form-data">
+                <div class="row mt-2">
+                    <input type="hidden" id="id" name="id" value="{{product.id_vyr}}">
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Image</label><input type="file" name="image" class="form-control" value="{{profile.heslo}}"></div>
+                </div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Uložit změny</button></div>
+                </div>
+            </form>
