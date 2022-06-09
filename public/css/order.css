@@ -7,6 +7,10 @@ body {
   border-color: #706c61;
 }
 
+#nav {
+  border-radius: 0px;
+}
+
 
  /* footer section*/
  .footer_section {

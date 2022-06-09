@@ -7,3 +7,7 @@ body {
   border-color: #706c61;
   margin-bottom: 20px;
 }
+
+#nav {
+  border-radius: 0px;
+}

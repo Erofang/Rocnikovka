@@ -38,6 +38,12 @@ body {
 #tlacitko:hover {
     background-color: rgb(13, 177, 13);
 }   
+#nav {
+  border-radius: 0px;
+}
+#tabulka {
+  border-radius: 15px;
+}
 .vypln{
   height: 200px;  
 }

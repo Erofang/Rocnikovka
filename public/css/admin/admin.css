@@ -9,6 +9,9 @@ body {
   margin-bottom: 100px;
 }
 
+#nav {
+  border-radius: 0px;
+}
 .container {
     padding: 2rem 0rem;
   }

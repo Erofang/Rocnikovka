@@ -9,6 +9,10 @@ body {
   margin-bottom: 100px;
 }
 
+#nav {
+    border-radius: 0px;
+  }
+
 .form-control:focus {
     box-shadow: none;
     border-color: #706c61
