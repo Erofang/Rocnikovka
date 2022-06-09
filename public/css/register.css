@@ -6,10 +6,13 @@ body {
   border-radius: 0px;
 }
 #tlacitko {
+  background-color:#9aeae6;
+  border-color: #9aeae6;
   transition: transform 0.5s;
 }
 
 #tlacitko:hover {
+  background-color: #4cebe3;
   transform: scale(1.05);
 }
 

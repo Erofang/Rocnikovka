@@ -12,6 +12,9 @@ body {
 #nav {
   border-radius: 0px;
 }
+.vypln{
+  height: 200px;  
+}
 .container {
     padding: 2rem 0rem;
   }
