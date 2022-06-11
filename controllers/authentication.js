@@ -9,17 +9,17 @@ const mysql = require('mysql');
 
 const app = express();
 
-// Serializing uživatele do session
+
 passport.serializeUser(function (user, done) {
 	done(null, user);
 });
-// Deserializing
+
 passport.deserializeUser(function (user, done) {
 	done(null, user);
 });
 
 
-// Local strategie přihlašování, která se vkládá do route loginu (passport.authenticate)
+
 passport.use(
 	'local',
 	new LocalStrategy(
@@ -28,17 +28,16 @@ passport.use(
 			passwordField: 'password',
 		},
 		(email, password, done) => {
-			// callback with email and password from our form
 			db.query(
 				'SELECT * FROM zakaznici WHERE email = ?',
 				[email],
 				(err, results, req) => {
 					if (err) throw err;
-					// Hledá jestli daný uživatel existuje v DB
+					// hleda uživatele v db
 					if (!results.length) {
 						return done(null, false, { message: 'Uživatel nenalezen' });
 					}
-					// Rozhashovavá heslo z DB s zadaným hesle uživatele
+					//porovnávání hashů
 					bcrypt.compare(password, results[0].heslo, (err, isMatch) => {
 						if (err) throw err;
 						if (isMatch) {
