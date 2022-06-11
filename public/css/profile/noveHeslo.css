@@ -11,7 +11,12 @@ body {
 #nav {
   border-radius: 0px;
 }
-
+#tlacitko {
+  transition: transform 0.5s;
+}
+#tlacitko:hover { 
+  transform: scale(1.05);
+}
 #alert {
 	color: black;
 }

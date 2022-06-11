@@ -12,6 +12,12 @@ body {
     border-radius: 0px;
   }
 
+#tlacitko:hover { 
+    transform: scale(1.05);
+}
+#tlacitko {
+    transition: transform 0.5s;
+  }
 .form-control:focus {
     box-shadow: none;
     border-color: #706c61

@@ -7,7 +7,7 @@
       <a class="navbar-brand" id="admin" href="/admin">Admin</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Odhlásit</button></form></li>
+      <li><form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger" id="tlacitko">Odhlásit</button></form></li>
     </ul>
   </div>
 </nav>
@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                <a href="/admin/prodcutPic"><img class="rounded-circle mt-5" width="50px" src='/profilePics/{{product.image}}'></a>
+                <img class="rounded-circle mt-5" width="150px" src='/profilePics/1654717381083.jpg'>
             </div>
         </div>
         <div class="col-md-5 border-right">
@@ -27,20 +27,56 @@
                 <div class="row mt-2">
                     <input type="hidden" id="id" name="id" value="{{product.id_vyr}}">
                     <div class="col-md-6"><label class="labels">Název</label><input type="text" name="nazev" class="form-control" value="{{product.nazev}}"></div>
-                    <div class="col-md-6"><label class="labels">Cena</label><input type="text" name="cena" class="form-control" value="{{product.cena}}"></div>
+                    <div class="col-md-6"><label class="labels">Cena</label><input type="text" name="cena" class="form-control" placeholder="___.__" data-slots="_" value="{{product.cena}}"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12"><label class="labels">Popis</label><input type="text" name="popis" class="form-control" value="{{product.popis}}"></div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <label for="druhy">Druh výrobku:</label>
+                    <select id="food" name="druhy">
+                        <option value="1" name="1">Pizza</option>
+                        <option value="2" name="2">Piti</option>
+                    </select>
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Uložit změny</button></div>
                 </div>
-                 <label for="druhy">Druh výrobku:</label>
-            <select id="food" name="druhy">
-            <option value="1" name="1">Pizza</option>
-            <option value="2" name="2">Piti</option>
-            </select>
             </form>
         </div>
     </div>
 </div>
 </div>
 </div>
+ <script>
+ // This code empowers all input tags having a placeholder and data-slots attribute
+document.addEventListener('DOMContentLoaded', () => {
+    for (const el of document.querySelectorAll("[placeholder][data-slots]")) {
+        const pattern = el.getAttribute("placeholder"),
+            slots = new Set(el.dataset.slots || "_"),
+            prev = (j => Array.from(pattern, (c,i) => slots.has(c)? j=i+1: j))(0),
+            first = [...pattern].findIndex(c => slots.has(c)),
+            accept = new RegExp(el.dataset.accept || "\\d", "g"),
+            clean = input => {
+                input = input.match(accept) || [];
+                return Array.from(pattern, c =>
+                    input[0] === c || slots.has(c) ? input.shift() || c : c
+                );
+            },
+            format = () => {
+                const [i, j] = [el.selectionStart, el.selectionEnd].map(i => {
+                    i = clean(el.value.slice(0, i)).findIndex(c => slots.has(c));
+                    return i<0? prev[prev.length-1]: back? prev[i-1] || first: i;
+                });
+                el.value = clean(el.value).join``;
+                el.setSelectionRange(i, j);
+                back = false;
+            };
+        let back = false;
+        el.addEventListener("keydown", (e) => back = e.key === "Backspace");
+        el.addEventListener("input", format);
+        el.addEventListener("focus", format);
+        el.addEventListener("blur", () => el.value === pattern && (el.value=""));
+    }
+});
+ </script>

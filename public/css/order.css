@@ -10,7 +10,12 @@ body {
 #nav {
   border-radius: 0px;
 }
-
+#tlacitko:hover { 
+  transform: scale(1.05);
+}
+#tlacitko {
+  transition: transform 0.5s;
+}
 
  /* footer section*/
  .footer_section {

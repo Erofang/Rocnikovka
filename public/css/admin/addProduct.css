@@ -12,7 +12,12 @@ body {
 #nav {
     border-radius: 0px;
   }
-
+#tlacitko {
+    transition: transform 0.5s;
+}
+#tlacitko:hover { 
+    transform: scale(1.05);
+  }
 .form-control:focus {
     box-shadow: none;
     border-color: #706c61
