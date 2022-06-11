@@ -4,8 +4,6 @@ const Product = require('../models/Product');
 
 
 
-
-
 router.get('/', async (req, res) => {
     const dataFood =   await Product.showProductFood();
     const dataDrink = await Product.showProductDrink();
@@ -15,7 +13,7 @@ router.get('/', async (req, res) => {
         style: 'order.css',
         script: 'cart.js',
         Food: dataFood,
-        Drink: dataDrink
+        Drink: dataDrink,
     })
 })
 
