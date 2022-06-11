@@ -10,6 +10,8 @@ const cookieParser = require('cookie-parser')
 const methoOverride = require('method-override')
 const db = require('./database')
 const multer = require('multer');
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
 
 
 
@@ -94,3 +96,4 @@ app.use('/admin', isLoggedIn, adminRouter);
 const PORT = 5005;
 
 app.listen(PORT, () => console.log(`Aplikace běží na portu ${PORT}`));
+
