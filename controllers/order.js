@@ -18,8 +18,42 @@ router.get('/', async (req, res) => {
 })
 
 
-router.post('/', (req, res) => {
-    
+router.post('/', async (req, res) => {
+    const output = `
+    <p>Ověření registrace</p>
+    <h3>Registrace</h3>
+      <p>Byl jste zaregistrovan na strance restaurace U Pepegy</p>
+  `;
+
+  let transporter = nodemailer.createTransport({
+    host: "smtp.ethereal.email",
+    port: 587,
+    secure: false, 
+    auth: {
+      user: 'alisha.weissnat52@ethereal.email', 
+      pass: '5hZ4YaBM4Mz12897cZ', 
+    },
+  });
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: '"U Pepegy" <Upepgy@seznam.cz>', // sender address
+    to: `${req.body.email}`, 
+    subject: "Registrace", 
+    text: "Hello world?", 
+    html: output, 
+  });
+
+   console.log("Message sent: %s", info.messageId);
+
+   try {
+    const uzivatel = req.user.id_zak;
+    const {adresa, mesta} = req.body;
+    console.log(uzivatel);
+
+   } catch {
+    res.redirect('/')
+   }
 });
 
 

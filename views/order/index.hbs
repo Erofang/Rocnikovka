@@ -69,11 +69,23 @@
             </div>
             <div class="cart-items">
             </div>
+            <form role="form" action="/order" method="POST"></form>
             <div class="cart-total">
                 <strong class="cart-total-title">Celkem</strong>
                 <span class="cart-total-price">0 Kč</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">OBJEDNAT</button>
+            <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Adresa</label><input type="text" name="adresa" class="form-control" placeholder="Jahodvá 666"></div>
+                </div>
+            <label for="druhy">Druh výrobku:</label>
+                    <select id="mesta" name="mesta">
+                        <option value="1" name="1">Dubí</option>
+                        <option value="2" name="2">Novosedlice</option>
+                        <option value="3" name="3">Proboštov</option>
+                        <option value="4" name="4">Teplice</option>
+                    </select>
+            <button class="btn btn-primary btn-purchase" type="submit">OBJEDNAT</button>
+            </form>
         </section>
   <!--tabulka pro kontakní udaje-->           
   <footer class="footer_section">
@@ -227,6 +239,17 @@
                 <strong class="cart-total-title">Celkem</strong>
                 <span class="cart-total-price">0 Kč</span>
             </div>
+            <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Název</label><input type="text" name="nazev" class="form-control"></div>
+                    <div class="col-md-6"><label class="labels">Cena</label><input type="text" name="cena" class="form-control" placeholder="" ></div>
+                </div>
+            <label for="druhy">Druh výrobku:</label>
+                    <select id="mesta" name="mesta">
+                        <option value="1" name="1">Dubí</option>
+                        <option value="2" name="2">Novosedlice</option>
+                        <option value="3" name="3">Proboštov</option>
+                        <option value="4" name="4">Teplice</option>
+                    </select>
             <button class="btn btn-primary btn-purchase" type="submit">OBJEDNAT</button>
             </form>
         </section>
