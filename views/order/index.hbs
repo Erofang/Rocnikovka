@@ -175,7 +175,7 @@
         <th scope="col"></th>
        </tr>
       {{#each Food}}
-      <div class="shop-items" item-id="{{this.id_vyr}}">
+      <div class="shop-items" id="{{this.id_vyr}}">
        <tr class="shop-item">
         <td class="shop-item-title">{{this.nazev}}</td>
         <td class="shop-item-price">{{this.cena}} Kč</td>
@@ -222,11 +222,13 @@
             </div>
             <div class="cart-items">
             </div>
+            <form role="form" action="/order" method="POST">
             <div class="cart-total">
                 <strong class="cart-total-title">Celkem</strong>
                 <span class="cart-total-price">0 Kč</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">OBJEDNAT</button>
+            <button class="btn btn-primary btn-purchase" type="submit">OBJEDNAT</button>
+            </form>
         </section>
   <!--tabulka pro kontakní udaje-->           
   <footer class="footer_section">

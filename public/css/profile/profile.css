@@ -1,5 +1,6 @@
 body { 
-	background: #e1f4f3; 
+	background: #e1f4f3;
+  font-family: 'Dancing Script', cursive; 
 }
 
 .navbar-inverse {
@@ -10,6 +11,10 @@ body {
 }
 #nav {
   border-radius: 0px;
+}
+
+#obrazek {
+  object-fit: cover;
 }
 
 #tlacitko {

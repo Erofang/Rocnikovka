@@ -16,7 +16,8 @@
 }
 
 body { 
-	background: #e1f4f3; 
+	background: #e1f4f3;
+  font-family: 'Dancing Script', cursive;
 }
 
 .navbar-inverse {
@@ -30,6 +31,7 @@ body {
 }
 #tlacitko {
     background-color:rgb(2, 116, 2);
+    transition: transform 0.5s;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -37,6 +39,7 @@ body {
 }
 #tlacitko:hover {
     background-color: rgb(13, 177, 13);
+    transform: scale(1.05);
 }   
 #nav {
   border-radius: 0px;
@@ -52,6 +55,9 @@ body {
 }
 .vypln{
   height: 200px;  
+}
+.menu {
+  text-align: center;
 }
    /* footer section*/
  .footer_section {
@@ -159,6 +165,20 @@ body {
 .footer_section .footer-info p a {
   color: inherit;
 }
+
+.about_section {
+  background:  #706c61; ;
+  color: white;
+}
+  .row {
+    align-items: center;
+  }
+
+  .img-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
 
 
 

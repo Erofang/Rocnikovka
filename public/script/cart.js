@@ -96,7 +96,7 @@ function updateCartTotal() {
         let cartRow = cartRows[i]
         let priceElement = cartRow.getElementsByClassName('cart-price')[0]
         let quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        let price = parseFloat(priceElement.innerText.replace('$', ''))
+        let price = parseFloat(priceElement.innerText.replace('Kč', ''))
         let quantity = quantityElement.value
         total = total + (price * quantity)
     }
