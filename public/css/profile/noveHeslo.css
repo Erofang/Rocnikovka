@@ -25,6 +25,40 @@ body {
 .vypln {
   height: 200px;
 }
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #706c61
+}
+
+.profile-button {
+  background: #706c61;
+  box-shadow: none;
+  border: none
+}
+
+.profile-button:hover {
+  background: #222831
+}
+
+.profile-button:focus {
+  background: #706c61;
+  box-shadow: none
+}
+
+.profile-button:active {
+  background: #706c61;
+  box-shadow: none
+}
+
+.back:hover {
+  color: #706c61;
+  cursor: pointer
+}
+
+.labels {
+  font-size: 11px
+}
  /* footer section*/
  .footer_section {
     background-color: #222831;

@@ -1,0 +1,27 @@
+body { 
+	background: #e1f4f3;
+  font-family: 'Dancing Script', cursive;
+}
+
+.navbar-inverse {
+  background-color:#706c61;
+  border-color: #706c61;
+}
+
+#nav {
+  border-radius: 0px;
+}
+
+.obrazek {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    height: 90vh;
+   
+}
+
+.lalala {
+    display: flex;
+    flex-direction: column;
+    text-align: center
+}

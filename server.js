@@ -26,6 +26,7 @@ const orderNoLogRouter = require('./controllers/orderNoLog');
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
 const adminRouter = require('./controllers/admin');
+const objOkRouter = require('./controllers/objOk');
 
 
 //nastavení handlebars
@@ -74,7 +75,8 @@ app.use(function (req, res, next) {
   });
 
   function isLoggedIn(req, res, next) {
-	if (req.isAuthenticated()) return next();
+	if (req.isAuthenticated()) 
+		return next();
 	res.redirect('/login');
 }
 
@@ -86,11 +88,12 @@ app.use(function (req, res, next) {
 //základní routa
 app.use('/', homeRouter);
 app.use('/profile', isLoggedIn,profileRouter);
-app.use('/order', orderRouter);
+app.use('/order', isLoggedIn, orderRouter);
 app.use('/orderNoLog', orderNoLogRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/admin', isLoggedIn, adminRouter);
+app.use('/objOk', objOkRouter);
 
 
 

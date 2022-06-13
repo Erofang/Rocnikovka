@@ -22,9 +22,10 @@ router.get('/', async (req, res) => {
  
 router.post('/', async (req, res) => {
     const output = `
-    <p>Ověření registrace</p>
+    <p>Stav objednávky</p>
     <h3>Objednávka</h3>
       <p>Objednávka byla uspěšná</p>
+      <p>Restaurace U Pepegy</p>
   `;
 
   let transporter = nodemailer.createTransport({
@@ -56,7 +57,7 @@ router.post('/', async (req, res) => {
     const {adresa, mesta} = req.body;
     console.log(adresa, mesta);
     Order.order(uzivatel, mobil, email, adresa, mesta)
-    res.redirect('/admin')
+    res.redirect('/objOk')
 
    } catch {
     res.redirect('/')
