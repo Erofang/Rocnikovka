@@ -52,7 +52,9 @@ router.post('/', async (req, res) => {
     const mobil = req.user.mobil;
     const email= req.user.email;
     const {adresa, mesta} = req.body;
+    console.log(adres, mesta);
     Order.order(uzivatel, mobil, email, adresa, mesta)
+    res.redirect('/admin')
    } catch {
     res.redirect('/')
    }
