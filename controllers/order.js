@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product');
+const Order = require('../models/Order');
 
 
 
@@ -21,8 +22,8 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const output = `
     <p>Ověření registrace</p>
-    <h3>Registrace</h3>
-      <p>Byl jste zaregistrovan na strance restaurace U Pepegy</p>
+    <h3>Objednávka</h3>
+      <p>Objednávka byla uspěšná</p>
   `;
 
   let transporter = nodemailer.createTransport({
@@ -38,7 +39,7 @@ router.post('/', async (req, res) => {
   // send mail with defined transport object
   let info = await transporter.sendMail({
     from: '"U Pepegy" <Upepgy@seznam.cz>', // sender address
-    to: `${req.body.email}`, 
+    to: `${req.user.email}`, 
     subject: "Registrace", 
     text: "Hello world?", 
     html: output, 
@@ -48,9 +49,10 @@ router.post('/', async (req, res) => {
 
    try {
     const uzivatel = req.user.id_zak;
+    const mobil = req.user.mobil;
+    const email= req.user.email;
     const {adresa, mesta} = req.body;
-    console.log(uzivatel);
-
+    Order.order(uzivatel, mobil, email, adresa, mesta)
    } catch {
     res.redirect('/')
    }

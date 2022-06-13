@@ -19,7 +19,9 @@ body {
 	background: #e1f4f3;
   font-family: 'Dancing Script', cursive;
 }
-
+img { 
+  margin-bottom: 25px;
+}
 .navbar-inverse {
   background-color:#706c61;
   border-color: #706c61;
