@@ -86,6 +86,7 @@ app.use(function (req, res, next) {
 app.use('/', homeRouter);
 app.use('/profile', isLoggedIn,profileRouter);
 app.use('/order', orderRouter);
+app.use('/orderNoLog', orderNoLogRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/admin', isLoggedIn, adminRouter);

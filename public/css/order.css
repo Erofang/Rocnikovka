@@ -17,8 +17,10 @@ body {
 #tlacitko {
   transition: transform 0.5s;
 }
-
- /* footer section*/
+#cudlik {
+  align-content: center;
+}
+ /* footer */
  .footer_section {
     background-color: #222831;
     color: #ffffff;

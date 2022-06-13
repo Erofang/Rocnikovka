@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const Product = require('../models/Product');
-const Order = require('../models/Order');
+const OrderNoLog = require('../models/OrderNoLog');
 
 
 
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     const dataFood =   await Product.showProductFood();
     const dataDrink = await Product.showProductDrink();
     /* console.log(dataFood); */
-    res.render('order/index', {
+    res.render('order/orderNoLog', {
         title: 'Order',
         style: 'order.css',
         script: 'cart.js',
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
   // send mail with defined transport object
   let info = await transporter.sendMail({
     from: '"U Pepegy" <Upepgy@seznam.cz>', // sender address
-    to: `${req.user.email}`, 
+    to: `${req.body.email}`,
     subject: "Registrace", 
     text: "Hello world?", 
     html: output, 
@@ -50,12 +50,12 @@ router.post('/', async (req, res) => {
 
    try {
 
-    const uzivatel = req.user.id_zak;
-    const mobil = req.user.mobil;
-    const email= req.user.email;
-    const {adresa, mesta} = req.body;
+    const uzivatel = 1;
+    const email = req.body.email;
+    console.log(email)
+    const {adresa, mesta, mobil} = req.body;
     console.log(adresa, mesta);
-    Order.order(uzivatel, mobil, email, adresa, mesta)
+    OrderNoLog.order(uzivatel, mobil, email, adresa, mesta)
     res.redirect('/admin')
 
    } catch {

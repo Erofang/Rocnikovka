@@ -68,17 +68,17 @@
             </div>
             <div class="cart-items">
             </div>
-            <form role="form" action="/order" method="POST">
+            <form role="form" action="/orderNoLog" method="POST">
             <div class="cart-total">
                 <strong class="cart-total-title">Celkem</strong>
                 <span class="cart-total-price">0 Kč</span>
             </div>
             <div class="row mt-2">
                     <div class="col-md-6"><label class="labels">Tel. číslo</label><input type="text" name="mobil" class="form-control"></div>
-                    <div class="col-md-6"><label class="labels">Email</label><input type="text" name="email" class="form-control" placeholder="" ></div>
-                    <div class="col-md-6"><label class="labels">Adresa</label><input type="text" name="adresa" class="form-control" placeholder="" ></div>
+                    <div class="col-md-6"><label class="labels">Email</label><input type="email" name="email" class="form-control"></div>
+                    <div class="col-md-6"><label class="labels">Adresa</label><input type="text" name="adresa" class="form-control"></div>
                     <div class="col-md-6">
-                    <label class="labels" for="druhy">Druh výrobku:</label>
+                    <label class="labels" for="druhy">Město:</label>
                     <select id="mesta" name="mesta" class="form-control">
                         <option value="1" name="1">Dubí</option>
                         <option value="2" name="2">Novosedlice</option>
@@ -87,9 +87,9 @@
                     </div>
                 </div>
             
-                    <select id="mesta" name="mesta">
+                    <select id="lalal" name="llala">
               
-            <button class="btn btn-primary btn-purchase" type="submit">OBJEDNAT</button>
+            <button class="btn btn-primary btn-purchase" type="submit" id="cudlik">OBJEDNAT</button>
             </form>
         </section>
   <!--tabulka pro kontakní udaje-->           
