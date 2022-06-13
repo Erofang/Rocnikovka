@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
   let info = await transporter.sendMail({
     from: '"U Pepegy" <Upepgy@seznam.cz>', // sender address
     to: `${req.body.email}`,
-    subject: "Registrace", 
+    subject: "Objednavka", 
     text: "Hello world?", 
     html: output, 
   });
