@@ -22,6 +22,7 @@ const app = express();
 const homeRouter = require('./controllers/home');
 const profileRouter = require('./controllers/profile');
 const orderRouter = require('./controllers/order');
+const orderNoLogRouter = require('./controllers/orderNoLog');
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
 const adminRouter = require('./controllers/admin');

@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const { jmeno, prijmeni, mobil, email, id } = req.body;
 	console.log(req.body);
-    /* const hashedPassword = await bcrypt.hash(heslo, 10); */
     await Profile.editProfile( jmeno, prijmeni, mobil, email, id );
 	res.redirect('/profile')
 });

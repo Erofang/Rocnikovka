@@ -1,13 +1,12 @@
-{{#if login}}
 <nav class="navbar navbar-inverse" id="nav">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">U Pepegy</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="profile" id="profil">Profil <i class="fa-solid fa-user"></i></a></li>
-      <li><form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger" id="tlacitko">Odhlásit</button></form></li>
-    </ul>
+        <li><a href="register"><span class="glyphicon glyphicon-user"></span> Registrace</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Přihlášení</a></li>
+      </ul>
     </div>
   </nav>
     <div class="d-flex justify-content-center" id="vyrobky">
@@ -22,7 +21,7 @@
         <th scope="col"></th>
        </tr>
       {{#each Food}}
-      <div class="shop-items">
+      <div class="shop-items" id="{{this.id_vyr}}">
        <tr class="shop-item">
         <td class="shop-item-title">{{this.nazev}}</td>
         <td class="shop-item-price">{{this.cena}} Kč</td>
@@ -69,25 +68,27 @@
             </div>
             <div class="cart-items">
             </div>
-            <div class="cart-total">
-                <strong class="cart-total-title">Celkem</strong>
-                <span class="cart-total-price">0 Kč</span>
-            </div>
             <form role="form" action="/order" method="POST">
             <div class="cart-total">
                 <strong class="cart-total-title">Celkem</strong>
                 <span class="cart-total-price">0 Kč</span>
             </div>
             <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Adresa</label><input type="text" name="adresa" class="form-control"></div>
-                </div>
-            <label for="druhy">Druh výrobku:</label>
-                    <select id="mesta" name="mesta">
+                    <div class="col-md-6"><label class="labels">Tel. číslo</label><input type="text" name="mobil" class="form-control"></div>
+                    <div class="col-md-6"><label class="labels">Email</label><input type="text" name="email" class="form-control" placeholder="" ></div>
+                    <div class="col-md-6"><label class="labels">Adresa</label><input type="text" name="adresa" class="form-control" placeholder="" ></div>
+                    <div class="col-md-6">
+                    <label class="labels" for="druhy">Druh výrobku:</label>
+                    <select id="mesta" name="mesta" class="form-control">
                         <option value="1" name="1">Dubí</option>
                         <option value="2" name="2">Novosedlice</option>
                         <option value="3" name="3">Proboštov</option>
                         <option value="4" name="4">Teplice</option>
-                    </select>
+                    </div>
+                </div>
+            
+                    <select id="mesta" name="mesta">
+              
             <button class="btn btn-primary btn-purchase" type="submit">OBJEDNAT</button>
             </form>
         </section>
@@ -163,12 +164,3 @@
       </div>
     </div>
   </footer>
-{{/if}}
-
-<!-- styly pokud nejsem prihlašen-->
-
-
-
-
-
-

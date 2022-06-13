@@ -54,7 +54,6 @@ router.post('/', chceckNotAuthenticated, async (req, res) =>{
 
    console.log("Message sent: %s", info.messageId); 
  
-  /* console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));  */
   
     try {
         const {jmeno,prijmeni, mobil, email, heslo} = req.body;
