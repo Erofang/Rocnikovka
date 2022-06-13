@@ -22,11 +22,11 @@
                 </div>
                 <form role="form" action="/admin/addProduct" method="post">
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Název</label><input type="text" name="nazev" class="form-control"></div>
-                    <div class="col-md-6"><label class="labels">Cena</label><input type="text" name="cena" class="form-control" placeholder="___.__" data-slots="_"></div>
+                    <div class="col-md-6"><label class="labels">Název</label><input type="text" name="nazev" class="form-control" required></div>
+                    <div class="col-md-6"><label class="labels">Cena</label><input type="number" name="cena" class="form-control" placeholder="159.99" min="1" step=".01" required></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Popis</label><input type="text" name="popis" class="form-control"></div>
+                    <div class="col-md-12"><label class="labels">Popis</label><input type="text" name="popis" class="form-control" required></div>
                     <br>
                     <br>
                     <br>
@@ -44,35 +44,3 @@
 </div>
 </div>
 </div>
- <script>
- // This code empowers all input tags having a placeholder and data-slots attribute
-document.addEventListener('DOMContentLoaded', () => {
-    for (const el of document.querySelectorAll("[placeholder][data-slots]")) {
-        const pattern = el.getAttribute("placeholder"),
-            slots = new Set(el.dataset.slots || "_"),
-            prev = (j => Array.from(pattern, (c,i) => slots.has(c)? j=i+1: j))(0),
-            first = [...pattern].findIndex(c => slots.has(c)),
-            accept = new RegExp(el.dataset.accept || "\\d", "g"),
-            clean = input => {
-                input = input.match(accept) || [];
-                return Array.from(pattern, c =>
-                    input[0] === c || slots.has(c) ? input.shift() || c : c
-                );
-            },
-            format = () => {
-                const [i, j] = [el.selectionStart, el.selectionEnd].map(i => {
-                    i = clean(el.value.slice(0, i)).findIndex(c => slots.has(c));
-                    return i<0? prev[prev.length-1]: back? prev[i-1] || first: i;
-                });
-                el.value = clean(el.value).join``;
-                el.setSelectionRange(i, j);
-                back = false;
-            };
-        let back = false;
-        el.addEventListener("keydown", (e) => back = e.key === "Backspace");
-        el.addEventListener("input", format);
-        el.addEventListener("focus", format);
-        el.addEventListener("blur", () => el.value === pattern && (el.value=""));
-    }
-});
- </script>

@@ -26,7 +26,7 @@
                 <div class="row mt-2">
                     <input type="hidden" id="id" name="id" value="{{product.id_vyr}}">
                     <div class="col-md-6"><label class="labels">Název</label><input type="text" name="nazev" class="form-control" value="{{product.nazev}}"></div>
-                    <div class="col-md-6"><label class="labels">Cena</label><input type="text" name="cena" class="form-control" placeholder="___.__" data-slots="_" value="{{product.cena}}"></div>
+                    <div class="col-md-6"><label class="labels">Cena</label><input type="text" name="cena" class="form-control" min="1" step=".01" value="{{product.cena}}"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12"><label class="labels">Popis</label><input type="text" name="popis" class="form-control" value="{{product.popis}}"></div>

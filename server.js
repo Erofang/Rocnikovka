@@ -80,7 +80,13 @@ app.use(function (req, res, next) {
 	res.redirect('/login');
 }
 
-	
+/* function isAdmin(req, res) {
+    if (req.user.isAdmin === 1) {
+        res.redirect('/admin');
+    } else {
+        res.redirect('/');
+    }
+} */
 
 
 
@@ -92,7 +98,7 @@ app.use('/order', isLoggedIn, orderRouter);
 app.use('/orderNoLog', orderNoLogRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-app.use('/admin', isLoggedIn, adminRouter);
+app.use('/admin',  isLoggedIn, adminRouter);
 app.use('/objOk', objOkRouter);
 
 
