@@ -23,12 +23,12 @@
                 <form role="form" action="/profile" method="post">
                 <div class="row mt-2">
                     <input type="hidden" id="id" name="id" value="{{profile.id_zak}}">
-                    <div class="col-md-6"><label class="labels">Jméno</label><input type="text" name="jmeno" class="form-control" value="{{profile.jmeno}}"></div>
-                    <div class="col-md-6"><label class="labels">Příjmení</label><input type="text" name="prijmeni" class="form-control" value="{{profile.prijmeni}}"></div>
+                    <div class="col-md-6"><label class="labels">Jméno</label><input type="text" name="jmeno" class="form-control" value="{{profile.jmeno}}" required></div>
+                    <div class="col-md-6"><label class="labels">Příjmení</label><input type="text" name="prijmeni" class="form-control" value="{{profile.prijmeni}}" required></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Telefon</label><input type="text" name="mobil" class="form-control" min="100000000" max="999999999" step=".01"value="{{profile.mobil}}"></div>
-                    <div class="col-md-12"><label class="labels">Email</label><input type="email" name="email" class="form-control" value="{{profile.email}}"></div>
+                    <div class="col-md-12"><label class="labels">Telefon</label><input type="text" name="mobil" class="form-control" min="100000000" max="999999999" step=".01"value="{{profile.mobil}}" required></div>
+                    <div class="col-md-12"><label class="labels">Email</label><input type="email" name="email" class="form-control" value="{{profile.email}}" required></div>
                 </div>
                 </div>
                 </div>
@@ -95,7 +95,7 @@
               <a href="https://twitter.com/home?lang=cs" target="_blank">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
-              <a href="https://www.instagram.com/" target="_blank">
+              <a href="https://www.instagram.com/u_pepegy/" target="_blank">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
             </div>

@@ -1,3 +1,4 @@
+{{#if login }}
 <nav class="navbar navbar-inverse" id="nav">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -15,3 +16,25 @@
 <strong>Objednávka odeslána</strong>
 </div>
 </div>
+{{/if}}
+
+{{#unless login }}
+<nav class="navbar navbar-inverse" id="nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" id="brand" href="">U Pepegy</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="register" id="brand"><span class="glyphicon glyphicon-user"></span> Registrovat se</a></li>
+      <li><a href="login" id="brand"><span class="glyphicon glyphicon-log-in"></span> Přihlásit se</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="obrazek">
+<div class="lalala">
+<a href="/"><img class="rounded-circle mt-5" id="obrazek" width="150px" height="150px" src='/profilePics/1655149929722.png'></a>
+<br>
+<strong>Objednávka odeslána</strong>
+</div>
+</div>
+{{/unless}}
