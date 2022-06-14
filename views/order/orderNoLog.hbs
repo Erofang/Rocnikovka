@@ -79,12 +79,13 @@
                     <div class="col-md-6"><label class="labels">Adresa</label><input type="text" name="adresa" class="form-control" required></div>
                     <div class="col-md-6">
                     <label class="labels" for="druhy">Město:</label>
+                    
                     <select id="mesta" name="mesta" class="form-control">
-                        <option value="1" name="1">Dubí</option>
-                        <option value="2" name="2">Novosedlice</option>
-                        <option value="3" name="3">Proboštov</option>
-                        <option value="4" name="4">Teplice</option>
+                      {{#each Mesta}}
+                        <option value="1" name="{{this.id_mesta}}">{{this.nazev_mesta}}</option>
+                        {{/each}}
                     </select>
+                     
                     </div>
                 </div>
             <button class="btn btn-primary btn-purchase" type="submit" id="cudlik">OBJEDNAT</button>

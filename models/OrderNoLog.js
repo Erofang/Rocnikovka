@@ -10,3 +10,10 @@ exports.order =  (uzivatel, mobil, email, adresa, mesta) => {
                 if (err) throw err;
             })  
 }
+
+exports.showMesta = () => {
+    let sql = 'SELECT * FROM mesta';
+    db.query(sql, err => {
+        if (err) throw err;
+    })
+}
